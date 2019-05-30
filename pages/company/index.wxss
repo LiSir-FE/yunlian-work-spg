@@ -1,0 +1,44 @@
+/* pages/company/index.wxss */
+.content{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.work-input-panel{
+    display: flex;
+    flex-direction: row;
+    width: 690rpx;
+    height: 88rpx;
+    border-bottom:1px dashed hsl(0, 0%, 95%);
+    margin-bottom: 20rpx;
+}
+
+.work-input-title{
+    width: 210rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #666666;
+    letter-spacing: 0;
+    padding: 0rpx 0rpx 0rpx 60rpx;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.work-input{
+    width: 500rpx;
+    height: 100%;
+    font-size: 28rpx;
+    flex-grow: 1;
+    flex-shrink: 1;
+    line-height: 88rpx;
+}
+
+.IconTrue{
+    position:absolute;
+    right:60rpx;
+    top:30rpx;
+}

@@ -1,0 +1,88 @@
+/* pages/newUser/index.wxss */
+.container{
+    height: auto
+}
+
+.work-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.work-input-panel{
+    display: flex;
+    flex-direction: row;
+    width: 690rpx;
+    height: 88rpx;
+    border-bottom:1px dashed #f2f2f2;
+    margin-bottom: 20rpx;
+}
+
+.work-input-title{
+    width: 210rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #666666;
+    letter-spacing: 0;
+    padding: 0rpx 0rpx 0rpx 30rpx;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.work-input{
+    width: 500rpx;
+    height: 100%;
+    font-size: 28rpx;
+    flex-grow: 1;
+    flex-shrink: 1;
+    line-height: 88rpx;
+}
+
+.trunkLine-done-button {
+  height: 88rpx;
+  width: 690rpx;
+  margin-bottom: 60rpx;
+  margin-top: 60rpx;
+  background-image: linear-gradient(-229deg, #4fcbff 16%, #17a9df 100%);
+  box-shadow: 0 25rpx 24rpx 0 rgba(23, 169, 223, 0.20);
+  border-radius: 4rpx;
+  color: #fff;
+  line-height: 88rpx;
+  font-size: 32rpx;
+}
+
+
+.radio-group{
+    font-size: 28rpx;
+    line-height: 88rpx;
+}
+radio{
+    width: 38rpx;
+}
+.radio{
+    margin-right: 40rpx;
+    box-sizing: border-box;
+}
+ 
+radio .wx-radio-input{
+    border-radius: 50%; 
+    width: 28rpx;
+    height: 28rpx;
+}
+
+
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+    border-radius: 50%;
+    width: 44rpx; 
+    height: 44rpx; 
+    line-height: 44rpx;
+    text-align: center;
+    font-size: 26rpx; /* 对勾大小 26rpx */
+    color:#fff; /* 对勾颜色 */
+    background: #2facff;
+    border-color: #2facff;
+}

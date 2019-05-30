@@ -1,0 +1,28 @@
+<!--pages/meUser/index.wxml-->
+<wxs src="../../filter/index.wxs" module="filter" />
+<view class='container'>
+    
+     <view class='work-input-panel'>
+        <input type='text' placeholder-style="padding-left:20rpx;" placeholder-class="placeholder-class" class='work-input' placeholder='搜索账号/名称/联系人' confirm-type='search' bindinput='input1' bindconfirm='bindconfirm'  focus='{{focus}}'  />
+        <icon type="search" size='14' color="#18A9DF" bindtap='IconFn' class='IconTrue'></icon>
+    </view>
+    
+    <view class='msg-item' wx:for="{{tableData}}" wx:for-item="item" wx:key="{{item.id}}">
+        <view class="msg-item-icon">
+                <!-- <view wx:if="{{messageNumber}}" class="weui-cell__news">{{messageNumber}}</view> -->
+                <view bindtap='tapPhone' data-phone="{{item.phone}}">
+                    <image src="../../resources/img/me/phone-fill_1.png"></image>
+                </view>
+            </view>
+            <view class='msg-item-content'>
+              <view class="item-info">
+                <text class="item-title">{{item.name}} </text>
+                <text class='item-title item-titles'> {{item.phone}}</text>
+                </view>
+                <view class="item-desc">
+                    <text class="item-time">{{item.companyName}}</text>
+                    <text class="item-time">{{filter.intJob(item.intJob)}}</text>
+                </view>
+            </view>
+    </view>
+</view>

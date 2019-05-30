@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view class='container'>
+    <form class='work-form'>
+        <view class='work-input-panel'>
+            <text class='work-input-title'>用户姓名</text>
+            <input class='work-input' placeholder-class="placeholder-class" placeholder="请输入用户姓名" bindtap='bindButtonTap' value='{{userNameVal}}'></input>
+            <!-- <icon type="warn" size='14' color="#18A9DF" bindtap='IconFn' class='IconTrue'></icon> -->
+        </view>
+
+        <view class='work-input-panel'>
+            <text class='work-input-title'>场景</text>
+                <picker bindchange="bindScenePickerChange" value="{{sceneIndex}}" range="{{sceneArr}}" class='work-input'>
+                   {{sceneArr[sceneIndex]}}
+                </picker>
+        </view>
+
+        <view class='work-input-panel'>
+            <text class='work-input-title'>沟通方式</text>
+                <picker bindchange="bindModePickerChange" value="{{modeIndex}}" range="{{modeArr}}" class='work-input'>
+                    {{modeArr[modeIndex]}}
+                </picker>
+        </view>
+
+        <view class='work-input-panel'>
+            <text class='work-input-title'>时间</text>
+                <picker mode="multiSelector" bindchange="bindTimePickerChange" bindcolumnchange="changeDateTimeColumn" value="{{dateTime}}" range="{{dateTimeArray}}" bindtap='changeDateTimeColumn' class='work-input'>
+                {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}
+                <text></text>
+                </picker>
+        </view>
+
+
+        <view class='work-input-panel'>
+            <text class='work-input-title'>标题</text>
+            <input class='work-input' placeholder-class="placeholder-class" placeholder="请输入标题" value='{{title}}' bindinput='bindinputTitle'></input>
+        </view>
+
+        <view class='work-input-panel'>
+            <text class='work-input-title'>分类</text>
+                <picker bindchange="bindClassPickerChange" value="{{classificationIndex}}" range="{{classificationArr}}" class='work-input'>
+                   {{classificationArr[classificationIndex]}}
+                </picker>
+        </view>
+
+         <view class='work-input-panel'>
+            <text class='work-input-title'>公司</text>
+            <input class='work-input' placeholder-class="placeholder-class" placeholder="请选择公司" bindtap='bindButtonTapCompan' value='{{company}}' name="companyId"></input>
+        </view>
+
+
+        <view class='work-input-panel' style='height: 300rpx'>
+            <text class='work-input-title1' style='align-items: none'>内容</text>
+            <textarea style="height: 100%" placeholder-class="placeholder-class" placeholder="请输入内容" value='{{content}}' bindinput='bindinputContent' show-confirm-bar='{{false}}' :fixed='true' maxlength="-1"></textarea>
+        </view>
+
+        <view class='work-input-panel'>
+            <text class='work-input-title' style="color: #18A9DF">以下内容选填</text>
+        </view>
+
+        <view class='work-input-panel'>
+            <text class='work-input-title'>碎片分类</text>
+                <picker bindchange="bindfragmentPickerChange" value="{{fragmentIndex}}" range="{{fragmentArr}}" class='work-input'>
+                   {{fragmentArr[fragmentIndex]}}
+                </picker>
+        </view>
+
+        
+        <view class='work-input-panel' style='height: 300rpx'>
+            <text class='work-input-title1'>碎片内容</text>
+             <textarea style="height: 100%" placeholder-class="placeholder-class" placeholder="请输入碎片内容" value='{{fragmentContent}}' bindinput='bindinputfragmentContent' show-confirm-bar='{{false}}' :fixed='true' maxlength="-1"></textarea>
+        </view>
+
+
+        <button class='trunkLine-done-button' bindtap='submission'>提交</button>
+        <!-- <button class='trunkLine-done-button buttonRight'>提交并完善商机</button> -->
+    </form>
+</view>

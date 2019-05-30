@@ -1,0 +1,32 @@
+<!--pages/meFollow/index.wxml-->
+<wxs src="../../filter/index.wxs" module="filter" />
+<view class='container'>
+     <view class='work-input-panel'>
+        <input type='text' placeholder-style="padding-left:20rpx;" placeholder-class="placeholder-class" class='work-input' placeholder='点击搜索' confirm-type='search' bindinput='input1' bindconfirm='bindconfirm'  focus='{{focus}}'  />
+        <icon type="search" size='14' color="#18A9DF" bindtap='IconFn' class='IconTrue'></icon>
+    </view>
+
+
+    <view class='msg-item' wx:for="{{tableData}}" wx:for-item="item" wx:key="{{item.id}}">
+        <view class='msg-item-content'>
+            <view class="item-info">
+                <text class="item-title">{{item.name}}</text>
+            </view>
+            <view class="item-desc">
+                <view class="item-time">
+                    <text class='left'>全称</text>
+                    <text class='right'>{{item.fullName}}</text>
+                </view>
+                <view class="item-time">
+                    <text class='left'>行业</text>
+                    <text class='right'>{{item.fieldName}}｀{{item.subFieldName}}</text>
+                </view>
+                <view class="item-time">
+                    <text class='left'>地址</text>
+                    <text class='right'>{{item.address}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

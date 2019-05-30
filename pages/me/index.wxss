@@ -1,0 +1,76 @@
+/* pages/me/index.wxss */
+page {
+    display: block;
+    min-height: 100%;
+    background-color: #f1f5fa;
+}
+.me-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.me-content .me-content-pageInfo {
+    width: 100%;
+    height: 362rpx;
+    background: #33d4f1;
+}
+
+.userInfo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.userInfo-avatar {
+    width: 172rpx;
+    height: 172rpx;
+    border-radius: 100%;
+    background: #fff;
+}
+
+.userinfo-nickname {
+    color: #fff;
+    font-size: 30rpx;
+    height: 42rpx;
+    width: 100%;
+    text-align: center;
+    line-height: 42rpx;
+    margin-top: 25rpx;
+}
+.weui-cell_access {
+  width: 100%;
+  height: 100rpx;
+  background-size: 100% 100%;
+  margin-top: 4rpx;
+  position: relative;
+}
+.weui-cell_image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.weui-cell__bd {
+  display: inline-block;
+  font-size: 30rpx;
+  color: #666;
+  line-height: 100rpx;
+}
+.weui-cell__hd {
+  display: inline-block;
+}
+.weui-cell__hd image {
+  margin-right: 30rpx;
+  margin-left: 40rpx;
+  vertical-align: middle;
+  line-height: 100rpx;
+  width: 46rpx;
+  height: 46rpx;
+}

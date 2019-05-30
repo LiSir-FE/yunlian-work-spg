@@ -1,0 +1,2 @@
+<!--pages/error/index.wxml-->
+<text>{{error}}</text>

@@ -1,0 +1,20 @@
+<!--pages/meWork/index.wxml-->
+<wxs src="../../filter/index.wxs" module="filter" />
+<view class='container'>
+     <view class='work-input-panel'>
+        <input type='text' placeholder-style="padding-left:20rpx;" placeholder-class="placeholder-class" class='work-input' placeholder='点击搜索' confirm-type='search' bindinput='input1' bindconfirm='bindconfirm'  focus='{{focus}}'  />
+        <icon type="search" size='14' color="#18A9DF" bindtap='IconFn' class='IconTrue'></icon>
+    </view>
+    <view class='msg-item' wx:for="{{tableData}}" wx:for-item="item" wx:key="{{item._id}}">
+        <view class="item-info">
+            <text class="item-title">{{item.title}}</text>
+        </view>
+        <view class="item-desc">
+            <text class="item-time">{{item.user.name}}</text>
+            <text class="item-time">{{filter.workType(item.type)}}</text>
+            <text class="item-time">{{filter.communicateMethod(item.communicateMethod)}}</text>
+            <text class="item-time">{{filter.formatDate(item.visitTime)}}</text>
+        </view>
+    </view>
+</view>
+

@@ -1,0 +1,12 @@
+<view class='content'>
+    <view class='work-input-panel'>
+        <input type='text' placeholder-style="padding-left:20rpx;" placeholder-class="placeholder-class" class='work-input' placeholder='点击搜索' confirm-type='search' bindinput='input1' bindconfirm='confirm1' focus='{{true}}'/>
+        <icon type="search" size='14' color="#18A9DF" bindtap='IconFn' class='IconTrue'></icon>
+    </view>
+
+    <view wx:for="{{hosList}}" wx:for-item="item" wx:key="{{item.id}}" bindtap='textBindTap' data-text="{{item.name}}" data-userId="{{item.id}}">
+        <view class='work-input-panel'>
+            <text class='work-input-title' style='width: 100%'>{{item.name}}</text>
+        </view>
+    </view>
+</view>

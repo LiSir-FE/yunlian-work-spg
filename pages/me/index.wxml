@@ -1,0 +1,49 @@
+<!--pages/me/index.wxml-->
+<view class='me-content'>
+    <view class='me-content-pageInfo'>
+        <view class='userInfo'>
+            <image class='userInfo-avatar' src='{{avatarUrl}}' background-size='cover'></image>
+            <text class="userinfo-nickname">{{nickName}}</text>
+        </view>
+    </view>
+
+    <view class='weui-cells weui-cells_after-title' style='margin-top: 20rpx;'>
+        <navigator url='../meWork/index' class='weui-cell weui-cell_access' open-type='navigate' hover-class='none'>
+            <image src='../../resources/img/me/slice.png ' class='weui-cell_image '></image>
+            <view class="weui-cell__hd">
+                <image src="../../resources/img/me/works_1.png"></image>
+            </view>
+            <view class="weui-cell__bd">我的工作</view>
+        </navigator>
+    </view>
+
+    <view class='weui-cells weui-cells_after-title'>
+        <navigator url='../meUser/index' class='weui-cell weui-cell_access' open-type='navigate' hover-class='none'>
+            <image src='../../resources/img/me/slice.png ' class='weui-cell_image '></image>
+            <view class="weui-cell__hd">
+                <image src="../../resources/img/me/users_1.png"></image>
+            </view>
+            <view class="weui-cell__bd">我的用户</view>
+        </navigator>
+    </view>
+
+    <view class='weui-cells weui-cells_after-title'>
+        <navigator url='../meCompany/index' class='weui-cell weui-cell_access' open-type='navigate' hover-class='none'>
+            <image src='../../resources/img/me/slice.png ' class='weui-cell_image '></image>
+            <view class="weui-cell__hd">
+                <image src="../../resources/img/me/company_1.png"></image>
+            </view>
+            <view class="weui-cell__bd">我的公司</view>
+        </navigator>
+    </view>
+
+    <view class='weui-cells weui-cells_after-title'>
+        <navigator url='../meFollow/index' class='weui-cell weui-cell_access' open-type='navigate' hover-class='none'>
+            <image src='../../resources/img/me/slice.png ' class='weui-cell_image '></image>
+            <view class="weui-cell__hd">
+                <image src="../../resources/img/me/collection_1.png"></image>
+            </view>
+            <view class="weui-cell__bd">我的关注</view>
+        </navigator>
+    </view>
+</view>

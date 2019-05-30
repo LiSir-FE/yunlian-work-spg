@@ -1,0 +1,90 @@
+var filter = {
+    //日期格式化
+    formatDate: function (id) {
+        var date = getDate(id * 1);
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        var D = date.getDate() < 10 ? '0' + date.getDate() + ' ' : date.getDate() + ' ';
+        // var h = date.getHours() < 10 ? '0' + date.getHours() + ':' : date.getHours() + ':';
+        // var m = date.getMinutes() < 10 ? '0' + date.getMinutes() + ' ' : date.getMinutes();
+        return Y + M + D;
+    },
+    // 工作-分类
+    workType: function (val) {
+        switch (val) {
+            case 1: {
+                return '信息沟通';
+            }
+            case 2: {
+                return '商务合作';
+            }
+            case 3: {
+                return '资源对接';
+            }
+            case 4: {
+                return '采访报道';
+            }
+            case 5: {
+                return '培训咨询';
+            }
+            default:
+                return '';
+        }
+    },
+    communicateMethod: function (val) {
+        switch (val) {
+            case 1: {
+                return '电话';
+            }
+            case 2: {
+                return '微信';
+            }
+            case 3: {
+                return '邮件';
+            }
+            case 4: {
+                return '面谈';
+            }
+            case 5: {
+                return '视频会议';
+            }
+            default:
+                return '';
+        }
+    },
+    intJob: function (val) {
+        switch (val) {
+            case 1: {
+                return '董事长/总经理';
+            }
+            case 2: {
+                return '副总裁/副总经理';
+            }
+            case 3: {
+                return '事业部总经理';
+            }
+            case 4: {
+                return '总监';
+            }
+            case 5: {
+                return '高级经理/经理';
+            }
+            case 6: {
+                return '主管';
+            }
+            case 7: {
+                return '专员';
+            }
+            case 8: {
+                return '总裁秘书/助理';
+            }
+            case 9: {
+                return '创始人/联合创始人/合伙人';
+            }
+            default:
+                return '';
+        }
+    }
+}
+
+module.exports = filter;
