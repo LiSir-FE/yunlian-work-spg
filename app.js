@@ -9,21 +9,20 @@ App({
                 method: config.method
             }
             if (wx.getStorageSync('token')) {
-                requestConfig.header = {
-                    Authorization: 'Bearer ' + wx.getStorageSync('token')
-                }
+              requestConfig.header = {
+                Authorization: 'Bearer ' + wx.getStorageSync('token')
+              }
             }
             requestConfig = Object.assign(requestConfig, config);
             requestConfig.url = this.buildUrl(config.url, config.data);
             let success = requestConfig.success;
             let fail = requestConfig.fail;
             requestConfig.success = (res) => {
-                if (res.statusCode === 200) {
+              if (res.statusCode === 200) {
                     if (res.data.code === 200) {
                         success && success(res);
                     } else {
                         if (res.data.code === 551102) {
-                            console.log('123', res);
                             fail && fail(res);
                         }else if (res.data.code === 510100) {
                             wx.showToast({ title: res.data.message, icon: 'none' });
@@ -38,6 +37,8 @@ App({
                                 }
                             })
                             return;
+                        } else if (res.data.code === 554101) {
+                            success && success(res);
                         } else {
                             wx.showToast({ title: res.data.message, icon: 'none' });
                             let error = res.data.message;
@@ -61,23 +62,24 @@ App({
             };
             return wx.request(requestConfig)
         }
-        // 登录
+        // // 登录
         wx.login({
-            success: res => {
-                // 发送 res.code 到后台换取 openId, sessionKey, unionId
-                if (res.code) {
-                    wx.setStorage({
-                        key: 'code',
-                        data: res.code,
-                    })
-                    wx.switchTab({
-                        url: '../main/index'
-                    })
-                } else {
-                    console.log('获取用户登录状态失败!' + res.errMsg)
-                }
+          success: res => {
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            if (res.code) {
+              wx.setStorage({
+                key: 'code',
+                data: res.code,
+              })
+              wx.redirectTo({
+                url: '../authorize/index'
+              })
+            } else {
+              console.log('获取用户登录状态失败!' + res.errMsg)
             }
-        }),
+          }
+            
+        })
         // 获取用户信息
         wx.getSetting({
             success: res => {
@@ -96,7 +98,7 @@ App({
                     })
                 } else {
                     wx.redirectTo({
-                        url: '../authorize/index',
+                      url: '../authorize/index'
                     })
                 }
             }

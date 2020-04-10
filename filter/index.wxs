@@ -84,6 +84,42 @@ var filter = {
             default:
                 return '';
         }
+    },
+    digitalZhuan: function(val) {
+        switch (val) {
+            case 1: {
+                return 'A';
+            }
+            case 2: {
+                return 'B';
+            }
+            case 3: {
+                return 'C';
+            }
+            case 4: {
+                return 'D';
+            }
+            default:
+                return '';
+        }
+    },
+    classify: function (val) {
+        switch (val) {
+            case 1: {
+                return '行业';
+            }
+            case 2: {
+                return '企业';
+            }
+            case 3: {
+                return '运联';
+            }
+            case 4: {
+                return '其它';
+            }
+            default:
+                return '';
+        }
     }
 }
 

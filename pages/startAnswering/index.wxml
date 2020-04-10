@@ -1,0 +1,58 @@
+<!-- <text>pages/startAnswering/index.wxml</text> -->
+<wxs src="../../filter/index.wxs" module="filter" />
+<view class='container'>
+    <view class='page-con'>
+        <swiper class='page-section' current="{{swiperCurrent}}">
+            <swiper-item wx:for="{{answeringList}}" wx:for-item="item" wx:for-index="idx" wx:key="item.type" catchtouchmove="forbidMove" class="dot{{index}}">
+                    <view style='background:#FEFFFF;padding: 10rpx 0;'>
+                        <text class='item-type'>{{filter.classify(item.classify)}}</text> 
+                        <text class='item-title'>{{item.title}}</text>
+                    </view>
+
+                <view class="radio-group">
+                    <block wx:for="{{item.answers}}" wx:for-item="items" wx:key="no">
+                        <view class="selection {{option['options' + items.no]  }}" bindtap="{{!isClicked ? 'optionTap' : ''}}" data-rightNo="{{item.rightNo}}" data-no="{{items.no}}" data-dex='{{idx}}' data-id="{{item.id}}">
+                            <view class='rowElement'>
+                                <span class="rowOptions">
+                                    {{filter.digitalZhuan(items.no)}}
+                                </span>
+                                <span style="padding-left: 10rpx;">{{items.title}}</span>   
+                            </view>
+                        </view>
+                    </block>
+                </view>  
+
+                <view class='page-Help' wx:if="{{isSelect}}">
+                    <text class='page-helpIcon'>帮助</text>
+                    <text class='page-text'>{{item.desc}}</text>
+                </view>
+            </swiper-item>
+        </swiper>
+           
+        <view class='page-footer' wx:if="{{!footerFlag}}">
+            <view class='page-footer-view'>
+                <cover-image src='../../resources/img/answer/correct.png' class='page-footer-img'></cover-image>
+                <text class='page-footer-text' style='color:#17a9df'>{{topic}}</text>
+           </view>
+           <view class='page-footer-view'>
+                <cover-image src='../../resources/img/answer/error.png' class='page-footer-img'></cover-image>
+                <text class='page-footer-text' style='color:#D75E50'>{{wrongQuestions}}</text>
+           </view>
+           <view class='page-footer-view'>
+                <cover-image src='../../resources/img/answer/answerNum.png' class='page-footer-img'></cover-image>
+                <text class='page-footer-text'>{{generalQuestions}}/{{answeringList.length}}</text>
+           </view>
+           <view class='page-footer-view' wx:if="{{nextQuestion}}" bindtap="nextStepTap" wx:if="{{nextQuestion}}">
+                <cover-image src='../../resources/img/answer/drop-down.png' class='page-footer-img'></cover-image>
+                <text class='page-footer-text'>下一题</text>
+           </view>
+
+
+           <view class='page-footer-view' wx:else="{{nextQuestion}}" bindtap="resultTap" data-resultSub='{{resultPage}}'>
+                <cover-image src='../../resources/img/answer/drop-down.png' class='page-footer-img'></cover-image>
+                <text class='page-footer-text'>完成</text>
+           </view>
+        </view>
+    </view>
+</view>
+

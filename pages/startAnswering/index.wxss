@@ -1,0 +1,199 @@
+/* pages/startAnswering/index.wxss */
+page{
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 10pt;
+  height: 100%;
+  width: 100%
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #f1f5fa;
+} 
+
+.page-con{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page-section{
+    width: 100%;
+    height: 100%;
+    margin-top: 30rpx;
+    padding-bottom: 120rpx;
+    box-sizing: border-box;
+}
+
+
+.item-type{
+    width: 20%;
+    line-height: 44rpx;
+    background: #33d4f1;
+    text-align: center;
+    color: #fff;
+    padding: 8rpx 30rpx;
+}
+
+.item-title{
+    text-align: center;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    line-height: 54rpx;
+    font-weight: 600
+}
+
+
+.radio-group{
+    height: 400rpx;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    margin-top: 45rpx;
+    width: 100%;
+}
+
+.selection{
+    width: 100%;
+    line-height: 100rpx;
+    height: 100rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* padding-left: 60rpx; */
+    box-sizing: border-box;
+    margin: 1rpx 0;
+    background-color: #fff;
+}
+
+.options1{
+    color: #F46359;
+}
+
+.options2{
+    color: #33d4f1;
+}
+
+.rowElement{
+    width: 100%;
+    height: 100%;
+}
+
+.rowOptions{
+    position: relative;
+    padding-right: 30rpx; 
+    margin-left: 40rpx;
+    box-sizing: border-box
+}
+
+.rowOptions::after{
+    content: '';
+    position: absolute;
+    left: -20%;
+    top: -20%;
+    box-sizing: border-box;
+    width: 48rpx;
+    height: 48rpx;
+    /* background: green; */
+    border-radius: 100%;
+    border: 1rpx solid #ccc;
+}
+
+
+
+.options2>.rowElement>.rowOptions::after{
+    content: '';
+    position: absolute;
+    background-image: url('https://resource.wetuc.com/static/images/right.png');
+    background-size: 100%;
+    left: -12rpx;
+    top: -6rpx;
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 100%;
+    border: none;
+    background-color: #fff;
+}
+
+.options1>.rowElement>.rowOptions::after{
+    content: '';
+    position: absolute;
+    background-image: url('https://resource.wetuc.com/static/images/wrong.png');
+    background-size: 100%;
+    left: -12rpx;
+    top: -6rpx;
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 100%;
+    border: none;
+    background-color: #fff;
+}
+
+
+
+
+.page-Help{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    margin-top: 50rpx;
+    box-sizing: border-box;
+}
+
+.page-helpIcon{
+    width: 100%;
+    display: inline-block;
+    margin-left: 10rpx;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+    margin-top: 15rpx;
+    border-left:5px solid #17a9df;
+}
+
+.page-text{
+    width: 100%;
+    display: inline-block;
+    line-height: 50rpx;
+    padding: 30rpx 20rpx;
+    text-indent: 20rpx;
+    text-align: left;
+    overflow: hidden;
+    background: #FEFFFF;
+    box-sizing: border-box;
+    word-break: keep-all;word-wrap: break-word;white-space: pre-line;
+}
+
+
+.page-footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 80rpx;
+    width: 100%;
+    background:#FEFFFF;
+    padding: 0 20rpx 0 30rpx;
+    box-sizing: border-box;
+}
+
+.page-footer-view{
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center
+}
+.page-footer-img{
+     width: 40rpx;
+     height: 40rpx;   
+     align-items: center;
+     background-size: 100%;
+}
+
+.page-footer-text{
+    display: inline-block;
+    padding-left: 10rpx;
+}
+
+

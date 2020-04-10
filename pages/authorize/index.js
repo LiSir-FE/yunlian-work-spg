@@ -5,65 +5,18 @@ Page({
      * 页面的初始数据
      */
     data: {
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        isHide: false
     },
     bindGetUserInfo(res) {
+        let that = this;
         if (res.detail.userInfo) {
-            if (!wx.getStorageSync('code')) {
-                // 登录
-                wx.login({
-                    success: rest => {
-                        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-                        if (rest.code) {
-                            wx.ajax({
-                                url: 'tokens/xcx',
-                                data: {
-                                    code: rest.code,
-                                    encryptedData: res.detail.encryptedData,
-                                    iv: res.detail.iv
-                                },
-                                method: 'GET',
-                                success: function (res) {
-                                    wx.setStorage({
-                                        key: 'token',
-                                        data: res.data.datas,
-                                    })
-                                    wx.switchTab({
-                                        url: '../main/index'
-                                    })
-                                },
-                                fail: function (err) {
-                                    wx.showToast({ title: res.errMsg });
-                                }
-                            })
-                        } else {
-                            console.log('获取用户登录状态失败!' + res.errMsg)
-                        }
-                    }
-                })
-            } else {
-                wx.ajax({
-                    url: 'tokens/xcx',
-                    data: {
-                        code: wx.getStorageSync('code'),
-                        encryptedData: res.detail.encryptedData,
-                        iv: res.detail.iv
-                    },
-                    method: 'GET',
-                    success: function (res) {
-                        wx.setStorage({
-                            key: 'token',
-                            data: res.data.datas,
-                        })
-                        wx.switchTab({
-                            url: '../main/index'
-                        })
-                    },
-                    fail: function (err) {
-                        wx.showToast({ title: res.errMsg });
-                    }
-                })
-            }
+            // 用户按了允许授权按钮
+            //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
+            that.setData({
+              isHide: false
+            });
+            that.onLoad();
         } else {
             wx.showModal({
                 title: '警告',
@@ -102,10 +55,10 @@ Page({
                                     wx.setStorage({
                                         key: 'token',
                                         data: res.data.datas,
-                                    })
-                                    wx.switchTab({
-                                        url: '../main/index'
-                                    })
+                                    });
+                                  wx.switchTab({
+                                    url: '../main/index'
+                                  })
                                 },
                                 fail: function (err) {
                                     wx.showToast({ title: res.errMsg });
@@ -113,6 +66,12 @@ Page({
                             })
                         }
                     });
+                } else {
+                  // 用户没有授权
+                  // 改变 isHide 的值，显示授权页面
+                  that.setData({
+                    isHide: true
+                  });
                 }
             }
         })
@@ -122,7 +81,7 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+     
     },
 
     /**

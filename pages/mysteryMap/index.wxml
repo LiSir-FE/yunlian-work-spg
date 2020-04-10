@@ -1,0 +1,8 @@
+<!--pages/mysteryMap/index.wxml-->
+<view class="canvas-box">
+    <view style="width:100%;height:100%;background:#000;opacity: 0.5"></view>
+    <canvas canvas-id="myCanvas" class="mycanvas" bindlongtap="saveSharImage" binderror="canvasIdErrorCallback"></canvas>
+    <view class="foot-swner" wx-if="{{anFlag}}">
+          <view class="shareFriends" bindtap="shareFriends">保存海报到相册</view>
+    </view>
+</view>

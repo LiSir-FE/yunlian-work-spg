@@ -1,0 +1,44 @@
+/* pages/answerList/index.wxss */
+
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 2.5rem;
+  align-items: center;
+  font-size: 30rpx;
+  margin: 2rpx;
+  box-sizing: border-box;
+  overflow: hidden
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+}
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  color: #000;
+  display: flex;
+  height: 2.5rem;
+  align-items: center;
+}
+
+image{
+  vertical-align: middle;
+  object-fit: cover;
+  display: inline-block;
+  width: 100rpx;
+  height: 2rem;
+  /* border-radius: 50% */
+}

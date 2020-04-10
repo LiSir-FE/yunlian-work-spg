@@ -1,10 +1,7 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-  <!-- <view class="remind-box" wx:if="{{remind}}">
-    <image class="remind-img" src="../../resources/img/more/loading.gif"></image>
-  </view> -->
-  <block>
-    <image class="title" src="../../resources/img/more/title8.png"></image>
+    <image class="title" src="../../resources/img/more/indexbg.jpg" mode="aspectFill"></image>
+  <!-- <block>
     <view class="content">
       <view class="hd" style="transform:rotateZ({{angle}}deg);">
         <image class='logo' src='../../resources/img/more/logo.png' background-size='cover'></image>
@@ -15,5 +12,25 @@
          <image class="smalltitle" src="../../resources/img/more/confirm-word1.png"></image>
       </view>
     </view>
-  </block>
+  </block> -->
+  <view class="abcdIdex">
+    <view class="conText" style="margin-top: {{windowHeight}}">
+        <view class="conTextDiv">欢迎回来, {{hostName}}</view>
+        <view class="conTextDiv">当月逐渐爆发, {{totalPoint}}</view>
+        <view class="conTextDiv">当月已有{{unlockNum}}位小伙伴成功解锁了神秘图</view>
+    </view>
+
+    <view class="conBtnBox">
+        <view class="conBtnDiv">
+          <view class="conBtn" bindtap="startAnswer">开始答题</view>
+        </view>
+        <view class="conBtnDiv">
+           <view class="conBtn" bindtap="mysteryMap">查看神秘图</view>
+        </view>
+        <view class="conBtnDiv">
+            <view class="conBtn" bindtap="leaderboards">查看排行榜</view>
+        </view>
+    </view>
+    <view class="rule" style="white-space:pre-wrap">规则说明：\n每月底分数清零， \n当月最大化累积达到{{basePoint}}分可完全解锁</view>
+  </view>
 </view>

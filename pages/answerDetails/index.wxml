@@ -1,0 +1,47 @@
+<!--pages/answerDetails/index.wxml-->
+<!-- <text>pages/answerDetails/index.wxml</text> -->
+<wxs src="../../filter/index.wxs" module="filter" />
+<view class='container'>
+    <view class='page-con'>
+
+      <view class="page-top">{{filter.formatDate(time)}}成绩单:答对
+          <span class="redY">{{rightNum}}</span>题,
+          答错<span class="redY">{{answeringList.length - rightNum}}</span>题,
+          得<span class="redY">{{point}}</span>分</view>
+  
+        <scroll-view scroll-y="true" style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+      
+
+          <view wx:for="{{answeringList}}" wx:for-item="item" wx:for-index="idx" wx:key="item.type" class="dot{{index}}">
+          
+              <view style='background:#FEFFFF;padding: 10rpx 0;box-sizing:border-box'>
+                  <text class='item-type'>{{filter.classify(item.classify)}}</text> 
+                  <text class='item-title'>{{item.title}}</text>
+              </view>
+
+                <view class="radio-group">
+                    <block wx:for="{{item.answers}}" wx:for-item="items" wx:for-index="index" wx:key="no">
+                        <view class="selection {{item.right ? items.no == item.rightNo ? 'options2' : '' : items.no == item.wrongNo ? 'options1' : items.no == item.rightNo ? 'options2' : ''}}">
+                            <view class='rowElement'>
+                                <span class="rowOptions">
+                                    {{filter.digitalZhuan(items.no)}}
+                                </span>
+                                <span style="padding-left: 10rpx;">{{items.title}}</span>   
+                            </view>
+                        </view>
+                    </block>
+                </view>  
+
+                <view class='page-Help'>
+                    <text class='page-helpIcon'>讲解</text>
+                    <text class='page-text'>{{item.desc}}</text>
+                </view>
+          
+          </view>
+            
+        </scroll-view>
+      
+    </view>
+</view>
+

@@ -1,0 +1,10 @@
+var resultPage = function (val) {
+    if (val >= 50) {
+        return '恭喜您得了' + val + '分'
+    } else {
+        return '您得了' + val + '分, 再接再厉!'
+    }
+}
+module.exports.resultPage = resultPage;
+
+

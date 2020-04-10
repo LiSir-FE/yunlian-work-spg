@@ -1,0 +1,30 @@
+<!--pages/leaderboards/index.wxml-->
+
+
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">排名</view>
+    <view class="th">头像</view>
+    <view class="th ">昵称</view>
+    <view class="th ">总分</view>
+  </view>
+
+  <block wx:for="{{list}}" wx:for-item="item" wx:key="index">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{index + 1}}</view>
+      <view class="td">
+        <image src="{{item.hostLogo}}" mode="widthFix"></image>
+      </view>
+      <view class="td">{{item.hostName}}</view>
+      <view class="td">{{item.totalPoint}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{index + 1}}</view>
+      <view class="td">
+        <image src="{{item.hostLogo}}" mode="widthFix"></image>
+      </view>
+      <view class="td">{{item.hostName}}</view>
+      <view class="td">{{item.totalPoint}}</view>
+    </view>
+  </block> 
+</view>

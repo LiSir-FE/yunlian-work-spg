@@ -46,4 +46,14 @@
             <view class="weui-cell__bd">我的关注</view>
         </navigator>
     </view>
+
+    <view class='weui-cells weui-cells_after-title'>
+        <navigator url='../answerList/index' class='weui-cell weui-cell_access' open-type='navigate' hover-class='none'>
+            <image src='../../resources/img/me/slice.png ' class='weui-cell_image '></image>
+            <view class="weui-cell__hd">
+                <image src="../../resources/img/me/answer.png"></image>
+            </view>
+            <view class="weui-cell__bd">我的答题</view>
+        </navigator>
+    </view>
 </view>
