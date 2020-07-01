@@ -43,27 +43,41 @@ Page({
                     wx.getUserInfo({
                         success: function (res) {
                             //用户已经授权过
-                            wx.ajax({
-                                url: 'tokens/xcx',
-                                data: {
-                                    code: wx.getStorageSync('code'),
-                                    encryptedData: res.encryptedData,
-                                    iv: res.iv
-                                },
-                                method: 'GET',
-                                success: function (res) {
+                          let encryptedData = res.encryptedData
+                          let iv = res.iv
+                          // // 登录
+                          wx.login({
+                            success: res => {
+                              // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                              if (res.code) {
+                                wx.ajax({
+                                  url: 'tokens/xcx',
+                                  data: {
+                                    code: res.code,
+                                    encryptedData: encryptedData,
+                                    iv: iv
+                                  },
+                                  method: 'GET',
+                                  success: function (res) {
                                     wx.setStorage({
-                                        key: 'token',
-                                        data: res.data.datas,
+                                      key: 'token',
+                                      data: res.data.datas,
                                     });
-                                  wx.switchTab({
-                                    url: '../main/index'
-                                  })
-                                },
-                                fail: function (err) {
+                                    wx.switchTab({
+                                      url: '../main/index'
+                                    })
+                                  },
+                                  fail: function (err) {
                                     wx.showToast({ title: res.errMsg });
-                                }
-                            })
+                                  }
+                                })
+                              } else {
+                                console.log('获取用户登录状态失败!' + res.errMsg)
+                              }
+                            }
+
+                          })
+                            
                         }
                     });
                 } else {

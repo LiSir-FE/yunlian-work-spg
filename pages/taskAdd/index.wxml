@@ -1,0 +1,70 @@
+<!--pages/taskAdd/index.wxml-->
+<view class="container">
+
+     <form class='work-form'>
+
+            <view class='work-input-panel'>
+                <text class='work-input-title'>标题</text>
+                <input class='work-input' placeholder-class="placeholder-class" placeholder="请输入标题" value='{{title}}' bindinput='bindinputTitle'></input>
+            </view>
+        
+
+            <view class='work-input-panel' style='height: 300rpx'>
+                <text class='work-input-title1' style='align-items: none'>描述</text>
+                <textarea style="height: 100%" placeholder-class="placeholder-class" placeholder="请输入内容" value='{{content}}' bindinput='bindinputContent' show-confirm-bar='{{false}}' :fixed='true' maxlength="-1"></textarea>
+            </view>
+
+            <view class='work-input-panel'>
+                <text class='work-input-title'>时间</text>
+                <picker mode="date" value="{{date}}" start="{{date}}" bindchange="bindDateChange">
+                    <view class='work-input'>
+                      {{date}}
+                    </view>
+                </picker>
+            </view>
+
+             <view class='work-input-panel'>
+                <text class='work-input-title'>加急</text>
+                <view class="work-input {{urgentFlag?'cuIcon-favorfill':'cuIcon-favor'}}" bindtap="urgentFn"></view>
+            </view>
+
+            <view class='work-input-panel'>
+                <text class='work-input-title'>成员</text>
+                <view class="work-input cuIcon-friend" bindtap="showModal" data-target="DialogModal1"></view>
+            </view>
+
+
+            <button class='trunkLine-done-button' bindtap='submission'>发布任务</button>
+
+            
+
+        </form>
+
+        <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+            <view class="cu-dialog">
+                <view class="cu-bar bg-white justify-end">
+                    <view class="content">一个任务最多同时分配10人</view>
+                    <view class="action" bindtap="hideModal">
+                        <text class="cuIcon-close text-red"></text>
+                    </view>
+                </view>
+                <view class="padding-xl">
+                    <checkbox-group bindchange="checkboxChange" class="checkboxGroup">
+                        <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="id">
+                            <view class="weui-cell__hd">
+                            <checkbox value="{{item.id}}" checked="{{item.selected}}"/>
+                            </view>
+                            <view class="weui-cell__bd">{{item.hostName}}</view>
+                        </label>
+                    </checkbox-group>
+                </view>
+                <view class="cu-bar bg-white justify-end">
+                  <view class="action">
+                    <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+                    <button class="cu-btn bg-green margin-left" bindtap="determine">确定</button>
+                  </view>
+                </view>
+            </view>
+        </view>
+
+</view>

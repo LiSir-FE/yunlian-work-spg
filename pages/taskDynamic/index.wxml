@@ -1,0 +1,10 @@
+<!--pages/taskDynamic/index.wxml-->
+<wxs src="../../filter/index.wxs" module="filter" />
+
+<view class="viewDiv">
+
+  <view class='timeAxisView' wx:for="{{items}}" wx:key="id"> 
+    <timeAxis isCurent="{{true}}" axisTitle="{{item.content}}" axisTitle2="{{item.subContent}}" axisTime="{{filter.formatDateS(item.createTime)}}"/>
+  </view>
+</view>
+

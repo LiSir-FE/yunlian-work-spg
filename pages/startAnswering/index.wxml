@@ -16,7 +16,7 @@
                                 <span class="rowOptions">
                                     {{filter.digitalZhuan(items.no)}}
                                 </span>
-                                <span style="padding-left: 10rpx;">{{items.title}}</span>   
+                                <text style="padding-left: 10rpx;" class="itemsTitle">{{items.title}}</text>   
                             </view>
                         </view>
                     </block>
@@ -24,7 +24,9 @@
 
                 <view class='page-Help' wx:if="{{isSelect}}">
                     <text class='page-helpIcon'>帮助</text>
-                    <text class='page-text'>{{item.desc}}</text>
+                    <scroll-view scroll-y="true" style="height:200px" >
+                      <view class='page-text'>{{item.desc}}</view>
+                    </scroll-view>
                 </view>
             </swiper-item>
         </swiper>
@@ -42,7 +44,7 @@
                 <cover-image src='../../resources/img/answer/answerNum.png' class='page-footer-img'></cover-image>
                 <text class='page-footer-text'>{{generalQuestions}}/{{answeringList.length}}</text>
            </view>
-           <view class='page-footer-view' wx:if="{{nextQuestion}}" bindtap="nextStepTap" wx:if="{{nextQuestion}}">
+           <view class='page-footer-view' wx:if="{{nextQuestion}}" bindtap="nextStepTap">
                 <cover-image src='../../resources/img/answer/drop-down.png' class='page-footer-img'></cover-image>
                 <text class='page-footer-text'>下一题</text>
            </view>

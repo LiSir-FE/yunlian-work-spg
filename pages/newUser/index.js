@@ -56,6 +56,13 @@ Page({
             })
         }
     },
+  onTabItemTap(item) {
+    if (!wx.getStorageSync('token')) {
+      wx.redirectTo({
+        url: '../authorize/index',
+      })
+    }
+  },
     /**
      * 生命周期函数--监听页面加载
      */

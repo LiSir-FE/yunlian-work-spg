@@ -1,0 +1,177 @@
+/**index.wxss**/
+page, .containers{
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    background: #F8F8F8;
+    /* margin-top: 88rpx; */
+}
+
+.contant{
+    width: 100%;
+    height: 150rpx;
+    margin: 16rpx auto;
+    background: #fff;
+    position: relative;
+    border-radius: 16rpx;
+}
+
+.contant .task-view, .contant .task-view2{
+    width: 100%;
+    height: 50%;
+    float: left;
+    padding-top: 12px;
+    box-sizing: border-box;
+}
+.contant .task-view2{
+    padding-top: 2%;
+    box-sizing: border-box;
+}
+
+.contant .task-view{
+    box-sizing: border-box;
+}
+
+.task-view .task-test{
+    font-size: 34rpx;
+    padding-left: 26rpx;
+    box-sizing: border-box;
+    /* font-weight: bold; */
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    float: left;
+    max-width: 60%;
+}
+
+.task-view .left{
+    padding: 0 10rpx;
+    border-radius: 10rpx;
+    margin-left: 10rpx;
+    box-sizing: border-box;
+    font-size: 34rpx;
+    float: left;
+}
+
+.task-view2 .expired{
+    line-height: 50rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    margin-left: 10rpx;
+}
+.bg-backbg{
+    background: #fff;
+}
+.fontSize{
+    padding-left: 26rpx;
+    font-size: 32rpx;
+    box-sizing: border-box;
+    color: #999;
+}
+
+.color-backbg{
+    color: #ff3f3f;
+    font-size: 32rpx;
+}
+.color-red{
+    color: #e54d42;
+    font-size: 32rpx;
+}
+.blue{
+    color: #33d4f1;
+    font-size: 32rpx;
+}
+.color-ccc{
+    color: #999;
+    font-size: 32rpx;
+}
+.backccc{
+    background: #dedede;
+    color: #fff;
+}
+.colorccc{
+    font-size: 32rpx;
+    color: #dedede;
+    background: #fff;
+}
+.bg-huang{
+    background: #f9c64b;
+    color: #fff;
+}
+
+.task-view2 .left{
+    line-height: 50rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    margin-left: 10rpx;
+    float: right;
+}
+
+.task-view2 .margin{
+    margin-right: 10rpx;
+}
+
+
+.task-add{
+    position: fixed;
+    right: 10%;
+    top: 60%;
+}
+
+.cuIcon-roundadd{
+    font-size: 100rpx;
+    color: #1296DB;
+    display: inline-block;
+}
+
+.cuIcon-favor, .cuIcon-favorfill{
+    color: red;
+}
+
+
+.task-footer{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+}
+
+
+.task-footer .Fbutton{
+    width: 100%;
+    line-height: 98rpx;
+    background: #33d4f1;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+
+
+.order-item {
+    height: 240rpx;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+  
+  .remove{  
+    width: 120rpx;  
+    height: 100%;  
+    background-color: red; 
+    color: white; 
+    position: absolute;  
+    top: 0;  
+    right: -120rpx;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center; 
+    font-size: 32rpx;
+    border-top-right-radius: 16rpx;
+    border-bottom-right-radius: 16rpx;
+  }  

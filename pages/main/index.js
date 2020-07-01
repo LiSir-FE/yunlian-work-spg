@@ -24,8 +24,34 @@ Page({
 
 
     startAnswer: function() {
+      if (!wx.getStorageSync('token')) {
+        wx.redirectTo({
+          url: '../authorize/index',
+        })
+      } else {
+        wx.navigateTo({
+          url: '../startAnswering/index',
+          success: function (res) {
+            console.log(res)
+          },
+          fail: function (res) {
+
+          },
+          complete: function (res) {
+
+          }
+        })
+      }
+      
+    },
+  mysteryMap: function () {
+    if (!wx.getStorageSync('token')) {
+      wx.redirectTo({
+        url: '../authorize/index',
+      })
+    } else {
       wx.navigateTo({
-        url: '../startAnswering/index',
+        url: '../mysteryMap/index',
         success: function (res) {
           console.log(res)
         },
@@ -36,34 +62,53 @@ Page({
 
         }
       })
-    },
-  mysteryMap: function () {
-    wx.navigateTo({
-      url: '../mysteryMap/index',
-      success: function (res) {
-        console.log(res)
-      },
-      fail: function (res) {
-
-      },
-      complete: function (res) {
-
-      }
-    })
+    }
+    
   },
   leaderboards: function () {
-    wx.navigateTo({
-      url: '../leaderboards/index',
-      success: function (res) {
-        console.log(res)
-      },
-      fail: function (res) {
+    if (!wx.getStorageSync('token')) {
+      wx.redirectTo({
+        url: '../authorize/index',
+      })
+    } else {
+      wx.navigateTo({
+        url: '../leaderboards/index',
+        success: function (res) {
+          console.log(res)
+        },
+        fail: function (res) {
 
-      },
-      complete: function (res) {
+        },
+        complete: function (res) {
 
-      }
-    })
+        }
+      })
+    }
+    
+  },
+
+
+  // 任务系统
+  taskSystem: function() {
+    if (!wx.getStorageSync('token')) {
+      wx.redirectTo({
+        url: '../authorize/index',
+      })
+    } else {
+      wx.navigateTo({
+        url: '../taskList/index',
+        success: function (res) {
+          console.log(res)
+        },
+        fail: function (res) {
+
+        },
+        complete: function (res) {
+
+        }
+      })
+    }
+
   },
   
     /**
@@ -85,6 +130,15 @@ Page({
           });
         },
       })
+     
+      if (wx.getStorageSync('token')) {
+        that.qingqiu();
+      }
+      
+    },
+
+    qingqiu: function() {
+      let that = this;
       wx.ajax({
         url: 'quizes/index',
         method: 'GET',
@@ -98,7 +152,6 @@ Page({
         }
       })
     },
-
     /**
      * 生命周期函数--监听页面隐藏
      */

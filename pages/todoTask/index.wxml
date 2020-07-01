@@ -1,0 +1,103 @@
+<!--pages/todoTask/index.wxml-->
+<view class="container">
+
+      <scroll-view scroll-y="true" style="height: 90%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      
+            <form class='work-form'>
+
+            <view class='work-input-panel'>
+                <text class='work-input-title'>标题</text>
+                <input class='work-input' placeholder-class="placeholder-class" placeholder="请输入标题" value='{{title}}' bindinput='bindinputTitle' disabled="{{typeFlag}}"></input>
+            </view>
+        
+
+            <view class='work-input-panel' style='height: 300rpx'>
+                <text class='work-input-title1' style='align-items: none'>描述</text>
+                <textarea style="height: 100%" placeholder-class="placeholder-class" placeholder="请输入内容" value='{{content}}' bindinput='bindinputContent' show-confirm-bar='{{false}}' :fixed='true' maxlength="-1" disabled="{{typeFlag}}"></textarea>
+            </view>
+
+            <view class='work-input-panel'>
+                <text class='work-input-title'>时间</text>
+                <picker mode="date" value="{{date}}" start="{{dateS}}" bindchange="bindDateChange" disabled="{{typeFlag}}">
+                    <view class='work-input'>
+                      {{date}}
+                    </view>
+                </picker>
+            </view>
+
+             <view class='work-input-panel'>
+                <text class='work-input-title'>加急</text>
+                <view class="work-input {{urgentFlag?'cuIcon-favorfill':'cuIcon-favor'}}" bindtap="{{!typeFlag ? 'urgentFn' : ''}}"></view>
+            </view>
+
+
+              <view class='work-input-panel' bindtap="dynamicFn">
+                <text class='work-input-title'>动态</text>
+                <view class="work-input cuIcon-edit" bindtap=""></view>
+            </view>
+
+               <!-- <view class='work-input-panel'>
+                <text class='work-input-title'>进度</text>
+                 <view class='work-input'>
+                      <progress percent="20" show-info stroke-width="3"/>
+                </view> -->
+               
+            <!-- </view> -->
+
+            <view class='work-input-panel'>
+                <text class='work-input-title'>成员</text>
+                <view class="work-input cuIcon-friend" bindtap="{{!typeFlag ? 'showModal' : ''}}" data-target="DialogModal1"></view>
+            </view>
+
+            <view class="tenMembers">
+                <view class="tenMembers25" wx:for="{{staffs}}" wx:key="staffId" bindtap="{{item.staffStatus == 2 ? 'tenMembers25Fn' : ''}}" data-id="{{item.staffId}}" data-index="{{index}}">
+                    <view class="cuIcon-peoplefill {{item.staffStatus == 2 ? 'green' : item.staffStatus == 3 ? 'blue' : '0'}}"></view>
+                    <text class="className">{{item.hostName}}</text>
+                    <!-- <text>{{index}}</text> -->
+                </view>
+            </view>
+
+
+           
+
+
+            <view class="footerBtn" wx:if="{{!typeFlag}}">
+              <button class='trunkLine-done-button' bindtap='submission'>保存任务</button>
+              <button class='trunkLine-done-button backred' bindtap='closeFn'>结束任务</button>
+            </view>
+
+        </form>
+
+
+
+        <view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+            <view class="cu-dialog">
+                <view class="cu-bar bg-white justify-end">
+                    <view class="content">一个任务最多同时分配10人</view>
+                    <view class="action" bindtap="hideModal">
+                        <text class="cuIcon-close text-red"></text>
+                    </view>
+                </view>
+                <view class="padding-xl">
+                    <checkbox-group bindchange="checkboxChange" class="checkboxGroup">
+                        <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="id">
+                            <view class="weui-cell__hd">
+                            <checkbox value="{{item.id}}" checked="{{item.selected}}"/>
+                            </view>
+                            <view class="weui-cell__bd">{{item.hostName}}</view>
+                        </label>
+                    </checkbox-group>
+                </view>
+                <view class="cu-bar bg-white justify-end">
+                  <view class="action">
+                    <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+                    <button class="cu-btn bg-green margin-left" bindtap="determine">确定</button>
+                  </view>
+                </view>
+            </view>
+        </view>
+      
+      
+      </scroll-view>
+     
+</view>

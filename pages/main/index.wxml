@@ -16,8 +16,8 @@
   <view class="abcdIdex">
     <view class="conText" style="margin-top: {{windowHeight}}">
         <view class="conTextDiv">欢迎回来, {{hostName}}</view>
-        <view class="conTextDiv">当月逐渐爆发, {{totalPoint}}</view>
-        <view class="conTextDiv">当月已有{{unlockNum}}位小伙伴成功解锁了神秘图</view>
+        <view class="conTextDiv">本月,你的小宇宙已爆发 {{totalPoint}} 千焦耳</view>
+        <view class="conTextDiv">本月已有{{unlockNum}}位小伙伴成功解锁了神秘图</view>
     </view>
 
     <view class="conBtnBox">
@@ -30,7 +30,10 @@
         <view class="conBtnDiv">
             <view class="conBtn" bindtap="leaderboards">查看排行榜</view>
         </view>
+         <view class="conBtnDiv">
+            <view class="conBtn" bindtap="taskSystem">任务系统</view>
+        </view>
     </view>
-    <view class="rule" style="white-space:pre-wrap">规则说明：\n每月底分数清零， \n当月最大化累积达到{{basePoint}}分可完全解锁</view>
+    <view class="rule" style="white-space:pre-wrap">规则说明：\n每月1日,16日零时分数清零， \n周期累计能量超过{{basePoint}}千焦耳,可完全\n解锁神秘图</view>
   </view>
 </view>

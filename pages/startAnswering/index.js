@@ -40,6 +40,23 @@ Page({
     let no = e.currentTarget.dataset.no;
     let dex = e.currentTarget.dataset.dex + 1;
     let id = e.currentTarget.dataset.id;
+    
+    //改变正确样式
+    that.shouAnswer(rightNo)
+    that.data.answerArr.push({
+      quizId: id,
+      right: rightNo === no ? true : false,
+      wrongNo: rightNo === no ? '' : no,
+      rightNo: rightNo,
+      wrongQuestions: that.data.wrongQuestions,
+      topic: that.data.topic,
+      resultPage: that.data.resultPage,
+      generalQuestions: e.currentTarget.dataset.dex + 1,
+      quizId: e.currentTarget.dataset.id,
+      no: e.currentTarget.dataset.no
+    });
+   
+    that.removeFn(that.data.answerArr, id)
     that.setData({
       generalQuestions: dex, //总题数
       isClicked: true //只能点击一次
@@ -60,27 +77,24 @@ Page({
         ['option.options' + no]: 'options2'
       })
     }
-    //改变正确样式
-    that.shouAnswer(rightNo)
-    
-    that.data.answerArr.push({
-      quizId: id,
-      right: rightNo === no ? true : false,
-      wrongNo: rightNo === no ? '' : no,
-      rightNo: rightNo,
-      wrongQuestions: that.data.wrongQuestions,
-      topic: that.data.topic,
-      resultPage: that.data.resultPage,
-      generalQuestions: e.currentTarget.dataset.dex + 1,
-      quizId: e.currentTarget.dataset.id,
-      no: e.currentTarget.dataset.no
-    });
     wx.setStorage({
       key: 'answerArr',
       data: that.data.answerArr,
     })
   },
+  removeFn: function(array, val) {
 
+    for (var i = 0; i < array.length - 1; i++) {
+
+      if (array[i].quizId == val) {
+        array.splice(i, 1);
+      }
+
+    }
+
+    return -1;
+
+  },
   // 展示正确答案
   shouAnswer: function(key) {
     // 通过swith语句判断正确答案，从而显示正确选项
@@ -146,17 +160,24 @@ Page({
           json: JSON.stringify(answerSub)
         },
         success: function(res) {
-          that.setData({
-            answeringList: res.data.datas
-          })
-          wx.removeStorage({
-            key: 'answeringList',
-            success: function(res) {},
-          })
-          wx.removeStorage({
-            key: 'answerArr',
-            success: function (res) { },
-          })
+          if (res.data.code) {
+            that.setData({
+              answeringList: res.data.datas
+            })
+            wx.removeStorage({
+              key: 'answeringList',
+              success: function (res) { },
+            })
+            wx.removeStorage({
+              key: 'answerArr',
+              success: function (res) { },
+            })
+
+            wx.navigateTo({
+              url: '../answerResult/index?resultSub=' + e.currentTarget.dataset.resultsub
+            })
+          }
+         
         },
         fail: function(err) {
           wx.showToast({
@@ -166,9 +187,7 @@ Page({
           })
         }
       })
-      wx.navigateTo({
-        url: '../answerResult/index?resultSub=' + e.currentTarget.dataset.resultsub
-      })
+     
     }
 
   },
@@ -276,10 +295,13 @@ Page({
               wx.getStorage({
                 key: 'answeringList',
                 success: function (resOk) {
-                  that.setData({
-                    answerArr: resArr.data
-                  })
+                  if (resArr.data.length >= 20) {
+                    that.setData({
+                      nextQuestion: false
+                    })
+                  }
                   resArr.data.forEach((item, index) => {
+                    
                     if (resOk.data.indexOf(item.quizId)){
                       that.data.answerArr1.push({
                         rightNo: item.rightNo,
@@ -295,6 +317,9 @@ Page({
                           wrongQuestions: item.wrongQuestions,
                         });
                     }
+                  })
+                  that.setData({
+                    answerArr: resArr.data
                   })
                 },
               })

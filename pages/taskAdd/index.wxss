@@ -1,0 +1,139 @@
+/* pages/taskAdd/index.wxss */
+.container{
+  height: auto
+}
+
+.work-form{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.work-input-panel{
+  display: flex;
+  flex-direction: row;
+  width: 690rpx;
+  height: 88rpx;
+  border-bottom:1px dashed #f1f1f1;
+  margin-bottom: 20rpx;
+}
+
+.work-input-title{
+  width: 210rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #666666;
+  letter-spacing: 0;
+  padding: 0rpx 0rpx 0rpx 30rpx;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.work-input-title1{
+  width: 210rpx;
+  box-sizing: border-box;
+  display: flex;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #666666;
+  letter-spacing: 0;
+  padding: 0rpx 0rpx 0rpx 30rpx;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.work-input{
+  width: 500rpx;
+  height: 100%;
+  font-size: 28rpx;
+  flex-grow: 1;
+  flex-shrink: 1;
+  line-height: 88rpx;
+}
+.placeholder-class {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #ccc;
+  letter-spacing: 0;
+  line-height: 28rpx;
+}
+
+.trunkLine-done-button {
+  width: 210rpx;
+  height: 210rpx;
+  line-height: 210rpx;
+  border-radius: 210rpx;
+  margin-bottom: 60rpx;
+  margin-top: 120rpx;
+  /* display: inline-block; */
+  background-image: linear-gradient(-229deg, #4fcbff 16%, #17a9df 100%);
+  box-shadow: 0 25rpx 24rpx 0 rgba(23, 169, 223, 0.20);
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.buttonLeft{
+  float: left
+}
+
+.buttonRight{
+  float: right
+}
+
+.IconTrue {
+  padding-top: 30rpx;
+}
+
+
+textarea{
+  font-size: 28rpx;
+}
+
+
+.cuIcon-favor, .cuIcon-favorfill, .cuIcon-friend{
+  font-size: 40rpx;
+  color: red;
+}
+
+.cuIcon-friend{
+  color: #1296DB;
+}
+
+
+.cu-dialog{
+  width: 90%;
+}
+
+.cu-dialog .content{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.padding-xl{
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+
+.checkboxGroup{
+  display: inline-block;
+}
+.weui-check__label{
+  float: left;
+  width: 33%;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.weui-cell__hd, .weui-cell__bd{
+  float: left;
+  margin-left: 5%;
+  box-sizing: border-box;
+}
+
+.weui-cell__bd{
+  font-size: 30rpx;
+}

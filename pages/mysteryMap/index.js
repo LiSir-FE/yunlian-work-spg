@@ -59,13 +59,14 @@ Page({
           pic: 'https://resource.wetuc.com' + res.data.datas.pic
         })
 
+
+
         wx.getImageInfo({
           src: that.data.hostLogo,    //请求的网络图片路径
           success: function (res) {
             that.setData({
               hostLogo: res.path
             })
-
 
             wx.getImageInfo({
               src: that.data.pic,    //请求的网络图片路径
@@ -79,6 +80,8 @@ Page({
                 })
               }
             })
+          },complete: function(err) {
+            console.log('asdasd', err)
           }
         })
       }
@@ -90,6 +93,7 @@ Page({
   createCanvasShareImage:function() {
     let that = this;
     let ctx = wx.createCanvasContext('myCanvas');
+
     // 获取canvas的宽度：
     // 750的设计稿基于iphone6的尺寸（屏幕宽度： 375px）在小程序中的比例是： 1px = 2rpx ==> 375px = 750rpx ==> 屏幕宽度(px) = 750rpx
     // 所以 1rpx = 屏幕宽度 / 750
@@ -106,7 +110,6 @@ Page({
     ctx.fillRect(0, 0, canvasWidthPx, that.data.windowHeight);
 
 
-   
     ctx.drawImage(that.data.pic, 0, 0, canvasWidthPx / 1.36, that.data.windowHeight / 1.25 - 60);
     // 计算文本的宽度：measureText() 取到文本的 width
     let txtWidth = ctx.measureText(that.data.hostName).width;
@@ -147,7 +150,8 @@ Page({
 
     // 设置 神秘图 的背景并填充canvas
     if (that.data.totalPoint <= that.data.basePoint) {
-      ctx.fillStyle = '#93e0ff';
+      ctx.fillStyle = '#4188a2';
+      // ctx.setStrokeStyle('rgba(244, 248, 246, 0.8)');
       ctx.fillRect(0, ((that.data.windowHeight / 1.25 - 60) / that.data.basePoint) * that.data.totalPoint, canvasWidthPx / 1.36, (that.data.windowHeight / 1.25 - 60) - ((that.data.windowHeight / 1.25 - 60) / that.data.basePoint) * that.data.totalPoint);
     }
   

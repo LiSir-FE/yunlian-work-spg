@@ -9,6 +9,15 @@ var filter = {
         // var m = date.getMinutes() < 10 ? '0' + date.getMinutes() + ' ' : date.getMinutes();
         return Y + M + D;
     },
+    formatDateS: function (id) {
+        var date = getDate(id * 1);
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+        var D = date.getDate() < 10 ? '0' + date.getDate() + ' ' : date.getDate() + ' ';
+        var h = date.getHours() < 10 ? '0' + date.getHours() + ':' : date.getHours() + ':';
+        var m = date.getMinutes() < 10 ? '0' + date.getMinutes() + ' ' : date.getMinutes();
+        return Y + M + D + h + m;
+    },
     // 工作-分类
     workType: function (val) {
         switch (val) {
@@ -116,6 +125,21 @@ var filter = {
             }
             case 4: {
                 return '其它';
+            }
+            default:
+                return '';
+        }
+    },
+    taskStatus: function (val) {
+        switch (val) {
+            case 1: {
+                return '进行中';
+            }
+            case 2: {
+                return '已完成';
+            }
+            case 3: {
+                return '已结束';
             }
             default:
                 return '';

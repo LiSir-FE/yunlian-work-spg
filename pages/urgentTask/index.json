@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "紧急任务",
+  "usingComponents": {
+    "timeAxis": "../../components/timeAxis/index"
+  }
+}

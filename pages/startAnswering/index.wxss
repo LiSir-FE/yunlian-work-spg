@@ -46,7 +46,7 @@ page{
 
 
 .radio-group{
-    height: 400rpx;
+    height: auto;
     display: flex;
     flex-direction: column;
     /* justify-content: space-around; */
@@ -57,15 +57,16 @@ page{
 
 .selection{
     width: 100%;
-    line-height: 100rpx;
-    height: 100rpx;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     /* padding-left: 60rpx; */
     box-sizing: border-box;
     margin: 1rpx 0;
     background-color: #fff;
+    flex-direction: column;
+        align-items:center;/*由于flex-direction: column，因此align-items代表的是水平方向*/
+        justify-content: center;/*由于flex-direction: column，因此justify-content代表的是垂直方向*/
+        padding: 40rpx 0;
 }
 
 .options1{
@@ -101,6 +102,13 @@ page{
     border: 1rpx solid #ccc;
 }
 
+
+.itemsTitle{
+  width: 100%;
+  padding: 0 5px;
+  line-height: 24px;
+  font-size: 26rpx;
+}
 
 
 .options2>.rowElement>.rowOptions::after{
@@ -159,10 +167,10 @@ page{
     padding: 30rpx 20rpx;
     text-indent: 20rpx;
     text-align: left;
-    overflow: hidden;
+    /* overflow: hidden; */
     background: #FEFFFF;
     box-sizing: border-box;
-    word-break: keep-all;word-wrap: break-word;white-space: pre-line;
+    /* word-break: keep-all;word-wrap: break-word;white-space: pre-line; */
 }
 
 

@@ -50,8 +50,25 @@ function userName(val, msg) {
     }
 }
 
+function isArr(val, msg) {
+    if(val === null || val === undefined) {
+        
+    }
+    if (val.length == 0 || val === null || val === undefined) {
+        wx.showToast({
+            title: msg,
+            icon: 'none'
+        });
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
 module.exports = {
     checkPhone: checkPhone,
+    isArr: isArr,
     checkPassword: checkPassword,
     userName: userName
 }

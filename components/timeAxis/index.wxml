@@ -1,0 +1,25 @@
+
+
+<view class='itemTimeZ'>
+ <!--  左边 -->
+<view class='leftView'>
+<view class='{{isCurent===true?"roundVIew":"outRoundVIew"}}'></view>
+<view wx:if="{{isShowLeftLine}}" class='leftLine'>
+</view>
+</view>
+
+<!-- 右边 -->
+<view class='rightContent'>
+  <slot name="rightChilren"></slot>
+<block wx:if="{{textArray.length>0}}">
+  <text wx:for="{{textArray}}" wx:key="unique" class='{{isCurent === true? "curentTitle" : "outTitle"}}'>{{item}}</text>
+</block>
+  <text wx:if="{{axisTitle!=''}}" class='{{isCurent === true? "curentTitle" : "outTitle"}}'>{{axisTitle}}</text>
+  <text wx:if="{{axisTitle2!=''}}" class='{{isCurent === true? "curentTitle curentTitle2" : "outTitle"}}'>{{axisTitle2}}</text>
+  <text class='{{isCurent === true? "curentTime" : "outTime"}}'>{{axisTime}}</text>
+  <!-- <text wx:if="{{axisTitle2!=''}}" class='{{isCurent === true? "curentTitle curentTitle3" : "outTitle"}}' bindtap="delete">{{axisTitle3 ? axisTitle3 : ''}}</text> -->
+</view>
+
+
+
+</view>

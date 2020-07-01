@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "任务动态",
+  "usingComponents": {
+    "timeAxis": "../../components/timeAxis/index"
+  }
+}

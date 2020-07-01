@@ -1,0 +1,95 @@
+<!--pages/taskList/index.wxml-->
+<wxs src="../../filter/index.wxs" module="filter" />
+
+
+
+
+
+<view class='containers'>
+
+        <scroll-view scroll-x class="bg-white nav">
+            <view class="flex text-center">
+                <view class="cu-item flex-sub {{index==TabCur?'text-lanse cur':''}}" wx:for="{{tabArr}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+                {{item.name}}
+                </view>
+            </view>
+        </scroll-view>
+
+
+
+        <scroll-view scroll-y="{{isScroll}}" style="height: 85%;width:90%;margin:auto" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <image src="../../resources/img/answer/noNewsyet.png" mode="aspectFit" wx:if="{{!items}}"></image>
+        <block wx:for="{{items}}" wx:key="id">
+        
+                <view data-index='{{index}}' class="contant" bindtouchstart="{{item.leader ? 'drawStart' : ''}}" bindtouchmove="{{item.leader ? 'drawMove' : ''}}" bindtouchend="{{item.leader ? 'drawEnd' : ''}}" style="right:{{item.right}}rpx" data-id="{{item.id}}" wx:if="{{contantFlag}}" bindtap="{{item.leader ? 'emidTaskFn' : 'editCollectFn'}}">
+                    
+                    <view class="task-view">
+                        <!-- <icon class="cuIcon-favor" wx:if="{{item.priority == 1}}"></icon>
+                        <icon class="cuIcon-favorfill" wx:if="{{item.priority == 2}}"></icon> -->
+                        <text class="task-test">{{item.title}}</text>
+
+                        <text class="cu-tag bg-green left" wx:if="{{item.leader}}">派</text>
+                        <text class="cu-tag bg-huang left" wx:if="{{!item.leader}}">收</text>
+
+                        <text class="cu-tag bg-red left" wx:if="{{item.priority == 2}}">急</text>
+                        <!-- <text class="cu-tag bg-blue left" wx:if="{{item.priority == 2}}"></text> -->
+                    </view>
+
+                    <view class="task-view2">
+                        <view class="cu-tag bg-backbg fontSize">{{filter.formatDate(item.endTime)}}</view>
+                        <text class="cu-tag color-backbg expired" wx:if="{{item.overtime}}">已超时</text>
+                        <view class="cu-tag bg-backbg left margin {{item.status == 1 ? 'color-red' : 'color-ccc'}}">{{filter.taskStatus(item.status)}}</view>
+                        
+                    </view>
+
+
+                    <view class="remove" catchtap="fileFn" data-id="{{item.id}}">回收</view>
+                
+                </view>
+        </block>
+
+        <block wx:if="{{!contantFlag}}" wx:for="{{items}}" wx:key="id">
+            <view data-index='{{index}}' class="contant" bindtouchmove="{{item.leader ? 'drawMove' : ''}}" bindtouchend="{{item.leader ? 'drawEnd' : ''}}" style="right:{{item.right}}rpx" bindtap="{{item.leader ? 'emidTaskFn' : 'editCollectFn'}}" data-id="{{item.id}}">
+            
+                <view class="task-view">
+
+
+                        <text class="task-test">{{item.title}}</text>
+
+                        <text class="cu-tag backccc left" wx:if="{{item.leader}}">派</text>
+                        <text class="cu-tag backccc left" wx:if="{{!item.leader}}">收</text>
+
+                        <text class="cu-tag backccc left" wx:if="{{item.priority == 2}}">急</text>
+                </view>
+
+                <view class="task-view2">
+                    <view class="cu-tag bg-backbg fontSize">{{filter.formatDate(item.endTime)}}</view>
+                        <text class="cu-tag colorccc expired" wx:if="{{item.overtime}}">已超时</text>
+                        <view class="cu-tag colorccc left margin {{item.status == 1 ? 'color-blue' : item.status == 2 ? 'color-red' : 'color-ccc'}}">{{filter.taskStatus(item.status)}}</view>
+                </view>
+
+                <view class="remove" catchtap="delItem" data-id="{{item.id}}">删除</view>
+            </view>
+        
+        </block>
+
+            
+
+            
+            
+            
+         
+
+            
+
+        </scroll-view>
+
+        
+            <view class="task-footer" wx:if="{{footerFlag}}">
+                <!-- <button class="Fbutton" bindtap="agencyTask">代办任务</button>
+                <view class="cuIcon-roundadd" bindtap="taskAdd"></view> -->
+                <button class="Fbutton" bindtap="taskAdd">添加任务</button>
+            </view>
+
+        
+</view>
