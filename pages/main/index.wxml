@@ -13,7 +13,8 @@
       </view>
     </view>
   </block> -->
-  <view class="abcdIdex">
+
+  <!-- <view class="abcdIdex">
     <view class="conText" style="margin-top: {{windowHeight}}">
         <view class="conTextDiv">欢迎回来, {{hostName}}</view>
         <view class="conTextDiv">本月,你的小宇宙已爆发 {{totalPoint}} 千焦耳</view>
@@ -33,7 +34,96 @@
          <view class="conBtnDiv">
             <view class="conBtn" bindtap="taskSystem">任务系统</view>
         </view>
+        <view class="conBtnDiv">
+            <view class="conBtn" bindtap="taskCurriclum">课程列表</view>
+        </view>
     </view>
     <view class="rule" style="white-space:pre-wrap">规则说明：\n每月1日,16日零时分数清零， \n周期累计能量超过{{basePoint}}千焦耳,可完全\n解锁神秘图</view>
+  </view> -->
+
+
+  <!-- 第三版 -->
+
+  <view class="nav-top">
+      <image class='userInfo-avatar' src='{{avatarUrl}}' background-size='cover' wx-if='{{avatarUrl}}'></image>
+      <image class='userInfo-avatar' src='../../resources/img/answer/moretoux.png' background-size='cover' wx-if='{{!avatarUrl}}'></image>
+      <view class="userinfo-nickname">{{nickName}}</view>
+
+
+
+<view class="me-content">
+
+  <view class='weui-cells weui-cells_after-title'>
+        <navigator url='../meWork/index' class='weui-cell weui-cell_access' open-type='navigate' hover-class='none'>
+            <image src='../../resources/img/answer/toRight.png ' class='weui-cell_image '></image>
+            <view class="weui-cell__hd">
+                <image src="../../resources/img/answer/newImg.png"></image>
+            </view>
+            <view class="weui-cell__bd">您有新的任务,点击查看</view>
+        </navigator>
+    </view>
+
+
+
+</view>
   </view>
+
+
+
+
+  <view class="nav-btm">
+      <view class="nav-btm-view">
+        <navigator url="../taskList/index" class="btm-nav">
+            <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
+            <view class="btm-top">
+                <image class="btm-top-img" src="../../resources/img/answer/renwu.png"></image>
+                <view class="btm-top-text">任务中心</view>
+            </view>
+            <view class="btm-btm">
+                排行榜 历史成绩 神秘图
+            </view>
+        </navigator>
+      </view>
+
+       <view class="nav-btm-view">
+        <navigator url="../meWork/index" class="btm-nav">
+            <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
+            <view class="btm-top">
+                <image class="btm-top-img" src="../../resources/img/answer/gongzuo.png"></image>
+                <view class="btm-top-text">工作中心</view>
+            </view>
+            <view class="btm-btm">
+                新增用户 新增工作 我的公司
+            </view>
+        </navigator>
+      </view>
+
+       <view class="nav-btm-view">
+        <navigator url="../curriculumList/index" class="btm-nav">
+            <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
+            <view class="btm-top">
+                <image class="btm-top-img" src="../../resources/img/answer/xuexi.png"></image>
+                <view class="btm-top-text">学习中心</view>
+            </view>
+            <view class="btm-btm">
+              学习课程 学习进度
+            </view>
+        </navigator>
+      </view>
+
+       <view class="nav-btm-view">
+        <navigator url="../startAnswering/index" class="btm-nav">
+            <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
+            <view class="btm-top">
+                <image class="btm-top-img" src="../../resources/img/answer/dati.png"></image>
+                <view class="btm-top-text">每日答题</view>
+            </view>
+            <view class="btm-btm">
+                排行榜 历史成绩 神秘图
+            </view>
+        </navigator>
+      </view>
+  
+  </view>
+
 </view>

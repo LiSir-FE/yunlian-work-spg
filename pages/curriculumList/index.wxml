@@ -1,0 +1,36 @@
+<!--pages/curriculumList/index.wxml-->
+<view class="containers">
+
+      <view class="view-header">
+          <text class="view-header-title">{{houstNmae}}: 欢迎来到课程中心</text>
+          <view class="work-input cuIcon-favor"></view>
+      </view>
+
+
+
+      <scroll-view scroll-y="{{isScroll}}" style="height: 85%;width:90%;margin:auto" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+
+          <view class="contant">
+          
+               <block wx:for="{{items}}" wx:key="id">
+                  <view  bindtap="courseDetailsFn">
+                      <view class="task-view">
+                          <text class="task-test">{{item.title}}</text>
+                      </view>
+
+                      <view class="task-view2">
+                          <view class="cu-tag bg-backbg fontSize">讲师: {{item.lecturer}}</view>
+                          <text class="cu-tag color-backbg expired">时长: {{item.time}}</text>
+                          <view class="cu-tag bg-backbg left margin blue">已学习{{item.speed}}</view>
+                      </view>
+              
+                  </view>
+                  
+              </block>
+          
+          </view>
+      
+      </scroll-view>
+
+</view>

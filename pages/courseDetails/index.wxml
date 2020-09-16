@@ -1,0 +1,65 @@
+<!--pages/courseDetails/index.wxml-->
+<view class="containers">
+    <view class="page-body">
+      <view class="page-section tc">
+        <video 
+          id="myVideo" 
+          src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" 
+          binderror="videoErrorCallback" 
+          danmu-list="{{danmuList}}" 
+          enable-danmu 
+          danmu-btn 
+          show-center-play-btn='{{false}}' 
+          show-play-btn="{{true}}" 
+          show-progress="{{false}}"
+          controls
+          enable-progress-gesture="{{false}}"
+          picture-in-picture-mode="{{['push', 'pop']}}"
+          bindenterpictureinpicture='bindVideoEnterPictureInPicture'
+          bindleavepictureinpicture='bindVideoLeavePictureInPicture'
+        ></video>
+      </view>
+    </view>
+
+
+          <view class="contant">
+              <view  bindtap="courseDetailsFn" style="width: 90%;margin: 0 auto;background: #fff">
+                      <view class="task-view">
+                          <text class="task-test">新员工第一节课</text>
+                      </view>
+
+                      <view class="task-view2">
+                          <view class="cu-tag fontSize">讲师: 123</view>
+                          <text class="cu-tag color-backbg expired">时长: 123</text>
+                          <view class="cu-tag left margin blue">已学习1</view>
+                      </view>
+
+
+                       <view class="task-view3">
+                          简介: 简简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介介
+                      </view>
+                  </view>
+          </view>
+
+
+
+                  <view class="contant">
+                  
+                      <block>
+                           <view style="width: 90%;margin: 0 auto;background: #fff;display:table">
+                                  <view class="task-view">
+                                  <text class="task-test">课后作业</text>
+                              </view>
+
+                              <view class="task-view2" wx:for="{{workAfter}}" wx:key="status">
+                                  <view class="cu-tag bg-backbg fontSize">{{item.title}}</view>
+                                  <view class="cu-tag bg-backbg left margin blue">{{item.status}}</view>
+                              </view>
+                          
+                           </view>    
+                      </block>
+                  
+                   </view>
+
+
+</view>

@@ -24,7 +24,9 @@
     "pages/todoTask/index",
     "pages/taskDynamic/index",
     "pages/urgentTask/index",
-    "components/timeAxis/index"
+    "components/timeAxis/index",
+    "pages/curriculumList/index",
+    "pages/courseDetails/index"
   ],
   "window": {
     "backgroundColor": "#F0F2F5",
@@ -42,18 +44,6 @@
         "iconPath": "resources/img/tab/home_1.png",
         "selectedIconPath": "resources/img/tab/home.png",
         "text": "首页"
-      },
-      {
-        "pagePath": "pages/work/index",
-        "iconPath": "resources/img/tab/work_1.png",
-        "selectedIconPath": "resources/img/tab/work.png",
-        "text": "新工作"
-      },
-      {
-        "pagePath": "pages/newUser/index",
-        "iconPath": "resources/img/tab/user_plus_1.png",
-        "selectedIconPath": "resources/img/tab/user_plus.png",
-        "text": "新用户"
       },
       {
         "pagePath": "pages/me/index",

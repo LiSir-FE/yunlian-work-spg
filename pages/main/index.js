@@ -12,13 +12,47 @@ Page({
         totalPoint: '',
         unlockNum: '',
         basePoint:'',
-        angle: 0
+        angle: 0,
+
+
+
+        avatarUrl: ''
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-     
+      let that = this;
+      _getUserInfo();
+      wx.showLoading({
+          title: '加载中',
+      })
+      function _getUserInfo() {
+          wx.getUserInfo({
+              success: function (res) {
+                  that.setData({
+                      avatarUrl: res.userInfo.avatarUrl,
+                      nickName: res.userInfo.nickName
+                  })
+              },
+              fail: function (err) {
+                  wx.removeStorage({
+                      key: 'token',
+                      success: function (res) {
+                          setTimeout(() => {
+                              wx.reLaunch({
+                                  url: '../authorize/index'
+                              })
+                          }, 800);
+                      }
+                  })
+                  return;
+              },
+              complete: function () {
+                  wx.hideLoading()
+              }
+          })
+      }
     },
 
 
@@ -110,6 +144,30 @@ Page({
     }
 
   },
+
+ // 课程
+ taskCurriclum: function() {
+  if (!wx.getStorageSync('token')) {
+    wx.redirectTo({
+      url: '../authorize/index',
+    })
+  } else {
+    wx.navigateTo({
+      url: '../curriculumList/index',
+      success: function (res) {
+        console.log(res)
+      },
+      fail: function (res) {
+
+      },
+      complete: function (res) {
+
+      }
+    })
+  }
+
+},
+  
   
     /**
      * 生命周期函数--监听页面初次渲染完成
