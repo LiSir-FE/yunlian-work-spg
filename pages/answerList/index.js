@@ -23,7 +23,7 @@ Page({
       },
       fail: function(err) {
         wx.showToast({
-          title: msg,
+          title: err,
           icon: 'none',
           duration: 2000
         })

@@ -15,7 +15,7 @@ Page({
         angle: 0,
 
 
-
+        shenmituFlag: false,
         avatarUrl: ''
     },
     /**
@@ -85,7 +85,8 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '../mysteryMap/index',
+        url: '../answerResult/index?resultSub=60',
+        // url: '../mysteryMap/index',
         success: function (res) {
           console.log(res)
         },
@@ -168,7 +169,27 @@ Page({
 
 },
   
-  
+  // 查看神秘图
+    shenmituFn() {
+      let that = this;
+      wx.ajax({
+        url: 'quizes/pic',
+        method: 'GET',
+        success: function (res) {
+          if((res.data.datas.answerNum == 1 || res.data.datas.answerNum == 2) && res.data.datas.point == 100) {
+            that.setData({
+              shenmituFlag: true
+            })
+          } else {
+            that.setData({
+              shenmituFlag: false
+            })
+          }
+        }
+      })
+    },
+
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -191,6 +212,7 @@ Page({
      
       if (wx.getStorageSync('token')) {
         that.qingqiu();
+        that.shenmituFn();
       }
       
     },

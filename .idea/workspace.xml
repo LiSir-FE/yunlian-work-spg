@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95463cae-c3c2-4420-b35d-c17fe64ef490" name="Default Changelist" comment="" />
+    <list default="true" id="37c91ac7-72ba-47c0-a835-b517382b9588" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filter/index.wxs" beforeDir="false" afterPath="$PROJECT_DIR$/filter/index.wxs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/httpConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/courseDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courseDetails/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/courseDetails/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courseDetails/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/courseDetails/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courseDetails/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/curriculumList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/curriculumList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/curriculumList/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/curriculumList/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/main/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/main/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main/index.wxss" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,22 +26,32 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/company/index.js">
+        <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="272">
+              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>baseUrl</find>
+      <find>httpConfig</find>
+      <find>form</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1928" />
+    <option name="y" value="-86" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
@@ -45,33 +67,6 @@
               <item name="yunlian-work-spg" type="b2602c69:ProjectViewProjectNode" />
               <item name="yunlian-work-spg" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="yunlian-work-spg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yunlian-work-spg" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yunlian-work-spg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yunlian-work-spg" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yunlian-work-spg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yunlian-work-spg" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="authorize" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yunlian-work-spg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yunlian-work-spg" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yunlian-work-spg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yunlian-work-spg" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -81,10 +76,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/yunlian-work-spg" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -103,21 +98,31 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="95463cae-c3c2-4420-b35d-c17fe64ef490" name="Default Changelist" comment="" />
-      <created>1559205417874</created>
+      <changelist id="37c91ac7-72ba-47c0-a835-b517382b9588" name="Default Changelist" comment="" />
+      <created>1600160292203</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1559205417874</updated>
-      <workItem from="1559205419078" duration="634000" />
-      <workItem from="1559206385755" duration="431000" />
+      <updated>1600160292203</updated>
+      <workItem from="1600160293372" duration="86000" />
+      <workItem from="1600160462464" duration="154000" />
+      <workItem from="1600218539484" duration="1442000" />
+      <workItem from="1600224159417" duration="1276000" />
     </task>
+    <task id="LOCAL-00001" summary="修改首页">
+      <created>1600218875926</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600218875926</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1065000" />
+    <option name="totallyTimeSpent" value="2958000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
+    <frame x="-1928" y="-86" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
@@ -131,9 +136,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32939914" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32832617" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" visible="true" weight="0.34871244" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.51824033" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -142,11 +147,55 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改首页" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改首页" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/company/index.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="272">
+          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
         </state>
       </provider>
     </entry>

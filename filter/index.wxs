@@ -144,7 +144,45 @@ var filter = {
             default:
                 return '';
         }
+    },
+    mycoursesStatus: function (val) {
+        switch (val) {
+            case 0: {
+                return '未学习';
+            }
+            case 1: {
+                return '学习中';
+            }
+            case 2: {
+                return '已完成';
+            }
+            default:
+                return '';
+        }
+    },
+    courseWorksStatus: function (val) {
+        switch (val) {
+            case 0: {
+                return '未完成';
+            }
+            case 1: {
+                return '已完成';
+            }
+            default:
+                return '';
+        }
+    },
+    resultPage: function (val) {
+        console.log(val)
+        if (val > 0 && val < 60) {
+            return val + '秒'
+        } else if(val > 60 && val <= 3599) {
+            return val / 60 + '分' + (parseInt(val % 60) == '0' ? '' : parseInt(val % 60) + '秒')
+        } else if(val >= 3600) {
+            return parseInt(val / 3600) + '小时' + (parseInt(val % 3600 / 60) == '0' ? '' : parseInt(val % 3600 / 60) + '分') + (parseInt(val % 60) == '0' ? '' : parseInt(val % 60) + '秒')
+        }
     }
+    
 }
 
 module.exports = filter;

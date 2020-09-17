@@ -5,7 +5,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        subResults: 30
+        subResults: 30,
+        src: 'https://resource.wetuc.com/static/quiz/again.jpg',
+        srcFlag: false
     },
 
     /**
@@ -16,6 +18,33 @@ Page({
         that.setData({
           subResults: options.resultSub
         })
+
+        wx.ajax({
+          url: 'quizes/pic',
+          method: 'GET',
+          success: function (res) {
+            if(res.data.datas.answerNum == 1 && res.data.datas.point != 100) {
+              this.setData({
+                src: 'https://resource.wetuc.com/static/quiz/again.jpg',
+                srcFlag: true
+              })
+            } else if(res.data.datas.answerNum == 2 && res.data.datas.point != 100) {
+              this.setData({
+                src: 'https://resource.wetuc.com/static/quiz/over.jpg'
+              })
+            }
+          }
+        })
+
+
+    },
+
+
+
+    srcFlagFn() {
+      wx.switchTab({
+        url: '../main/index'
+      })
     },
 
     timeTap: function(e) {

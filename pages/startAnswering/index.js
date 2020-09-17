@@ -172,10 +172,17 @@ Page({
               key: 'answerArr',
               success: function (res) { },
             })
+            if(e.currentTarget.dataset.resultsub >= 100) {
+              wx.navigateTo({
+                url: '../mysteryMap/index?resultSub=' + e.currentTarget.dataset.resultsub
+              })
+            } else {
+              wx.navigateTo({
+                url: '../answerResult/index?resultSub=' + e.currentTarget.dataset.resultsub
+              })
+            }
 
-            wx.navigateTo({
-              url: '../answerResult/index?resultSub=' + e.currentTarget.dataset.resultsub
-            })
+            
           }
          
         },
@@ -241,6 +248,9 @@ Page({
           that.setData({
             answeringList: res.data.datas,
             footerFlag: false
+          })
+          res.data.datas.forEach((item, index) => {
+            console.log(index, item.rightNo)
           })
           if (type == 1) {
             // 缓存

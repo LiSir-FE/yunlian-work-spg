@@ -46,6 +46,9 @@ Page({
     })
 
 
+
+
+
     wx.ajax({
       url: 'quizes/index',
       method: 'GET',
@@ -57,6 +60,18 @@ Page({
           basePoint: res.data.datas.basePoint,
           totalPoint: res.data.datas.totalPoint,
           pic: 'https://resource.wetuc.com' + res.data.datas.pic
+        })
+
+        wx.ajax({
+          url: 'quizes/pic',
+          method: 'GET',
+          success: function (res) {
+            if((res.data.datas.answerNum == 1 || res.data.datas.answerNum == 2) && res.data.datas.point == 100) {
+              that.setData({
+                pic: 'https://resource.wetuc.com/static/quiz/success.jpg'
+              })
+            }
+          }
         })
 
 
@@ -208,7 +223,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    wx.switchTab({
+      url: '../main/index'
+    })
   },
 
   /**

@@ -3,7 +3,7 @@
 <view class='container'>
     <view class='page-con'>
         <swiper class='page-section' current="{{swiperCurrent}}">
-            <swiper-item wx:for="{{answeringList}}" wx:for-item="item" wx:for-index="idx" wx:key="item.type" catchtouchmove="forbidMove" class="dot{{index}}">
+            <swiper-item wx:for="{{answeringList}}" wx:for-item="item" wx:for-index="idx" wx:key="type" catchtouchmove="forbidMove" class="dot{{index}}">
                     <view style='background:#FEFFFF;padding: 10rpx 0;'>
                         <text class='item-type'>{{filter.classify(item.classify)}}</text> 
                         <text class='item-title'>{{item.title}}</text>

@@ -14,7 +14,7 @@ page, .containers{
   border-radius: 8rpx;
   padding: 20rpx 10rpx;
   line-height: 50rpx;
-  font-size: 34rpx;
+  font-size: 28rpx;
   font-weight: 600;
   margin: 10rpx auto 20rpx auto;
 
@@ -50,7 +50,7 @@ page, .containers{
 }
 
 .task-view .task-test{
-  font-size: 34rpx;
+  font-size: 26rpx;
   padding-left: 26rpx;
   box-sizing: border-box;
   /* font-weight: bold; */
@@ -81,22 +81,22 @@ page, .containers{
 }
 .fontSize{
   padding-left: 26rpx;
-  font-size: 32rpx;
+  font-size: 26rpx;
   box-sizing: border-box;
   color: #999;
 }
 
 .color-backbg{
   color:#999;
-  font-size: 32rpx;
+  font-size: 26rpx;
 }
 .color-red{
   color: #e54d42;
-  font-size: 32rpx;
+  font-size: 26rpx;
 }
 .blue{
   color: #33d4f1;
-  font-size: 32rpx;
+  font-size: 26rpx;
 }
 .color-ccc{
   color: #999;

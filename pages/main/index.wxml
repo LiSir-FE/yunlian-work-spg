@@ -1,6 +1,6 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-    <image class="title" src="../../resources/img/more/indexbg.jpg" mode="aspectFill"></image>
+    <!-- <image class="title" src="../../resources/img/more/indexbg.jpg" mode="aspectFill"></image> -->
   <!-- <block>
     <view class="content">
       <view class="hd" style="transform:rotateZ({{angle}}deg);">
@@ -54,7 +54,7 @@
 <view class="me-content">
 
   <view class='weui-cells weui-cells_after-title'>
-        <navigator url='../meWork/index' class='weui-cell weui-cell_access' open-type='navigate' hover-class='none'>
+        <navigator url='../taskList/index' class='weui-cell weui-cell_access' open-type='navigate' hover-class='none'>
             <image src='../../resources/img/answer/toRight.png ' class='weui-cell_image '></image>
             <view class="weui-cell__hd">
                 <image src="../../resources/img/answer/newImg.png"></image>
@@ -72,30 +72,42 @@
 
 
   <view class="nav-btm">
-      <view class="nav-btm-view">
-        <navigator url="../taskList/index" class="btm-nav">
-            <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
-            <view class="btm-top">
-                <image class="btm-top-img" src="../../resources/img/answer/renwu.png"></image>
-                <view class="btm-top-text">任务中心</view>
-            </view>
-            <view class="btm-btm">
-                排行榜 历史成绩 神秘图
-            </view>
-        </navigator>
-      </view>
+      
 
        <view class="nav-btm-view">
-        <navigator url="../meWork/index" class="btm-nav">
+        <view class="btm-nav">
             <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
-            <view class="btm-top">
+            <navigator url="../meWork/index" class="btm-top">
                 <image class="btm-top-img" src="../../resources/img/answer/gongzuo.png"></image>
                 <view class="btm-top-text">工作中心</view>
+            </navigator>
+            <navigator url="../userInfo/index" class="btm-btm btm-btm33">
+                新增用户
+            </navigator>
+            <navigator url="../work/index" class="btm-btm btm-btm33">
+                新增工作
+            </navigator>
+            <navigator url="../meCompany/index" class="btm-btm btm-btm33">
+                我的公司
+            </navigator>
+        </view>
+      </view>
+
+      
+       <view class="nav-btm-view">
+        <view class="btm-nav">
+            <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
+            <navigator url="../startAnswering/index" class="btm-top">
+                <image class="btm-top-img" src="../../resources/img/answer/dati.png"></image>
+                <view class="btm-top-text">每日答题</view>
+            </navigator>
+            <view class="btm-btm btm-btm33" bindtap="mysteryMap" wx-if="{{shenmituFlag}}">
+                神秘图
             </view>
-            <view class="btm-btm">
-                新增用户 新增工作 我的公司
-            </view>
-        </navigator>
+             <navigator url="../answerList/index" class="btm-btm btm-btm33">
+                历史成绩
+            </navigator>
+        </view>
       </view>
 
        <view class="nav-btm-view">
@@ -105,24 +117,32 @@
                 <image class="btm-top-img" src="../../resources/img/answer/xuexi.png"></image>
                 <view class="btm-top-text">学习中心</view>
             </view>
-            <view class="btm-btm">
-              学习课程 学习进度
+            <view class="btm-btm btm-btm33">
+                学习课程
+            </view>
+            <!-- <navigator url="../curriculumList/index" class="btm-btm btm-btm33">
+                学习进度
+            </navigator> -->
+        </navigator>
+      </view>
+
+
+      <view class="nav-btm-view">
+        <navigator url="../taskList/index" class="btm-nav">
+            <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
+            <view class="btm-top">
+                <image class="btm-top-img" src="../../resources/img/answer/renwu.png"></image>
+                <view class="btm-top-text">任务中心</view>
+            </view>
+            <view class="btm-btm btm-btm33">
+                新动态: 0
+            </view>
+             <view class="btm-btm btm-btm33">
+                进行中: 0
             </view>
         </navigator>
       </view>
 
-       <view class="nav-btm-view">
-        <navigator url="../startAnswering/index" class="btm-nav">
-            <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
-            <view class="btm-top">
-                <image class="btm-top-img" src="../../resources/img/answer/dati.png"></image>
-                <view class="btm-top-text">每日答题</view>
-            </view>
-            <view class="btm-btm">
-                排行榜 历史成绩 神秘图
-            </view>
-        </navigator>
-      </view>
   
   </view>
 

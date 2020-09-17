@@ -6,13 +6,8 @@ Page({
    */
   data: {
     isScroll: true,
-    houstNmae: 'liliang',
-    items: [{
-      title: '新员工入门第一课',
-      lecturer: '李亮',
-      time: '30',
-      speed: 1
-    }],
+    nickName: '',
+    items: [],
     img: '../../resources/img/me/collection_1/png'
   },
 
@@ -20,11 +15,40 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    _getUserInfo();
+    wx.showLoading({
+        title: '加载中',
+    })
+    function _getUserInfo() {
+        wx.getUserInfo({
+            success: function (res) {
+                that.setData({
+                    nickName: res.userInfo.nickName
+                })
+            },
+            fail: function (err) {
+                wx.removeStorage({
+                    key: 'token',
+                    success: function (res) {
+                        setTimeout(() => {
+                            wx.reLaunch({
+                                url: '../authorize/index'
+                            })
+                        }, 800);
+                    }
+                })
+                return;
+            },
+            complete: function () {
+                wx.hideLoading()
+            }
+        })
+    }
   },
   courseDetailsFn: function(e) {
     wx.navigateTo({
-      url: '../courseDetails/index',
+      url: '../courseDetails/index?id=' + e.currentTarget.dataset.id,
     })
   },
   upper(e) {
@@ -63,11 +87,28 @@ Page({
 
   },
 
+  // 获取列表
+  qingqiu: function() {
+    let that = this;
+    wx.ajax({
+      url: 'studies',
+      method: 'GET',
+      data: {
+          pageNo: 1,
+          pageSize: 10
+      },
+      success: function (res) {
+        that.setData({
+          items: res.data.datas.datas
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.qingqiu();
   },
 
   /**

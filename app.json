@@ -26,7 +26,9 @@
     "pages/urgentTask/index",
     "components/timeAxis/index",
     "pages/curriculumList/index",
-    "pages/courseDetails/index"
+    "pages/courseDetails/index",
+    "pages/courseworks/index",
+    "pages/jobList/index"
   ],
   "window": {
     "backgroundColor": "#F0F2F5",

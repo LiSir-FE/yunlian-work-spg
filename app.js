@@ -31,7 +31,7 @@ App({
                                 success: function (res) {
                                     setTimeout(() => {
                                       wx.redirectTo({
-                                            url: '../main/index'
+                                            url: '../authorize/index'
                                         })
                                     }, 800);
                                 }

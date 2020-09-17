@@ -1,22 +1,24 @@
 <!--pages/courseDetails/index.wxml-->
+<wxs src="../../filter/index.wxs" module="filter" />
 <view class="containers">
     <view class="page-body">
       <view class="page-section tc">
         <video 
           id="myVideo" 
-          src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" 
-          binderror="videoErrorCallback" 
-          danmu-list="{{danmuList}}" 
-          enable-danmu 
-          danmu-btn 
+          src="{{src}}" 
+          binderror="videoErrorCallback"
           show-center-play-btn='{{false}}' 
           show-play-btn="{{true}}" 
           show-progress="{{false}}"
           controls
+          initial-time="{{studyTime}}"
           enable-progress-gesture="{{false}}"
           picture-in-picture-mode="{{['push', 'pop']}}"
           bindenterpictureinpicture='bindVideoEnterPictureInPicture'
           bindleavepictureinpicture='bindVideoLeavePictureInPicture'
+          bindended="bindendeds"
+          bindplay="bindplays"
+          bindpause="bindpauses"
         ></video>
       </view>
     </view>
@@ -25,18 +27,19 @@
           <view class="contant">
               <view  bindtap="courseDetailsFn" style="width: 90%;margin: 0 auto;background: #fff">
                       <view class="task-view">
-                          <text class="task-test">新员工第一节课</text>
+                          <text class="task-test">{{title}}</text>
                       </view>
 
                       <view class="task-view2">
-                          <view class="cu-tag fontSize">讲师: 123</view>
-                          <text class="cu-tag color-backbg expired">时长: 123</text>
-                          <view class="cu-tag left margin blue">已学习1</view>
+                          <view class="cu-tag fontSize">讲师: {{hostName}}</view>
+                          <text class="cu-tag color-backbg expired">时长: {{filter.resultPage(time)}}</text>
+                          <view class="cu-tag bg-backbg left margin blue" wx:if="studyStatus == 0">{{filter.mycoursesStatus(studyStatus)}}</view>
+                          <view class="cu-tag bg-backbg left margin blue" wx:else>{{filter.mycoursesStatus(studyStatus)}}{{studyPercent}}</view>
                       </view>
 
 
                        <view class="task-view3">
-                          简介: 简简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介介
+                          简介: {{content}}
                       </view>
                   </view>
           </view>
@@ -51,9 +54,9 @@
                                   <text class="task-test">课后作业</text>
                               </view>
 
-                              <view class="task-view2" wx:for="{{workAfter}}" wx:key="status">
-                                  <view class="cu-tag bg-backbg fontSize">{{item.title}}</view>
-                                  <view class="cu-tag bg-backbg left margin blue">{{item.status}}</view>
+                              <view class="task-view22" wx:for="{{workAfter}}" wx:key="status">
+                                  <view class="cu-tag bg-backbg fontSize workAfter" bindtap="workAfterfn" data-title1="{{title}}" data-title2="{{item.cwTitle}}" data-id="{{item.id}}">{{index + 1 + ','}} {{item.cwTitle}}</view>
+                                  <view wx:if="{{!teacher}}" class="cu-tag blue cu-tagBrue workAfter20" bindtap="workAfter20fn" data-title1="{{title}}" data-title2="{{item.cwTitle}}" data-id="{{item.id}}" data-status="{{item.status}}">{{filter.courseWorksStatus(item.status)}}</view>
                               </view>
                           
                            </view>    

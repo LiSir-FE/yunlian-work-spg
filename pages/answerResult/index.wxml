@@ -3,15 +3,17 @@
 
 <view class="container">
 
-  <cover-image src="../../resources/img/answer/correct.png" class="answer-icon"></cover-image>
+  <!-- <cover-image src="../../resources/img/answer/correct.png" class="answer-icon"></cover-image>
   <view class="answer-text">答题完毕，今日答题得分: <span style="color: red;"> {{subResults}} 分</span></view>
 
 
   <view class="answer-footer">
       <button type="primary" class="answer-btn" bindtap="timeTap">返回首页</button>
       <button type="primary" class="answer-btn" bindtap="timeTapList">查看历史成绩单</button>
-  </view>
+  </view> -->
 
+  <image src="{{src}}" mode="aspectFill" style="height: 100%"></image>
+  <image class="ztzyc" src="../../resources/img/more/ztzyc.png" mode="widthFix" bindtap="srcFlagFn"></image>
 </view>
 
 

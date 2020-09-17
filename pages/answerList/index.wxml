@@ -3,7 +3,7 @@
 <wxs src="../../filter/index.wxs" module="filter" />
 
 <view class="container">
-    <view class="loadmore" wx:for="{{tableData}}" wx:for-item="item" wx:key="item.id">
+    <view class="loadmore" wx:for="{{tableData}}" wx:for-item="item" wx:key="id">
         <view class="loadview loadmore-time">{{filter.formatDate(item.time)}}</view>
         <view class="loadview loadmore-fraction">{{item.point}}</view>
         <text class="loadview loadmore-see" bindtap="loadmoreTap" data-time="{{item.time}}">查看</text>
