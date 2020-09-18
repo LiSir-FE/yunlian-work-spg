@@ -104,8 +104,8 @@
             <view class="btm-btm btm-btm33" bindtap="mysteryMap" wx-if="{{shenmituFlag}}">
                 神秘图
             </view>
-             <navigator url="../answerList/index" class="btm-btm btm-btm33">
-                历史成绩
+             <navigator url="../startAnswering/index" class="btm-btm btm-btm33">
+                超级答题
             </navigator>
         </view>
       </view>

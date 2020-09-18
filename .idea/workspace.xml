@@ -48,7 +48,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -60,6 +59,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -99,6 +99,7 @@
       <workItem from="1600417106875" duration="173000" />
       <workItem from="1600418674348" duration="25000" />
       <workItem from="1600419924159" duration="18000" />
+      <workItem from="1600419987359" duration="47000" />
     </task>
     <task id="LOCAL-00001" summary="修改首页">
       <created>1600218875926</created>
@@ -135,11 +136,18 @@
       <option name="project" value="LOCAL" />
       <updated>1600419931139</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="神秘图">
+      <created>1600420024061</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1600420024061</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3819000" />
+    <option name="totallyTimeSpent" value="3866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-86" width="1936" height="1066" extended-state="6" />
