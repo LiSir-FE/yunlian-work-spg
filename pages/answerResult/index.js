@@ -33,6 +33,11 @@ Page({
                 src: 'https://resource.wetuc.com/static/quiz/over.jpg',
                 srcFlag: false
               })
+            } else{
+              that.setData({
+                src: 'https://resource.wetuc.com/static/quiz/success.jpg',
+                srcFlag: false
+              })
             }
           }
         })

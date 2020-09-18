@@ -85,7 +85,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '../answerResult/index?resultSub=60',
+        url: '../mysteryMap/index',
         // url: '../mysteryMap/index',
         success: function (res) {
           console.log(res)
