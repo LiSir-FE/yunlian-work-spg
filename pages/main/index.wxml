@@ -97,7 +97,7 @@
        <view class="nav-btm-view">
         <view class="btm-nav">
             <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
-            <navigator url="../answerResult/index" class="btm-top">
+            <navigator url="../startAnswering/index" class="btm-top">
                 <image class="btm-top-img" src="../../resources/img/answer/dati.png"></image>
                 <view class="btm-top-text">超级答题</view>
             </navigator>
