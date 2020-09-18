@@ -16,8 +16,8 @@ page {
 
 .ztzyc{
   position: absolute;
-  left: 0;
   bottom: 100rpx;
+  width: 50%;
 }
 
 .answer-icon {
