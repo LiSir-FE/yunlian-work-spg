@@ -13,7 +13,7 @@
   </view> -->
 
   <image src="{{src}}" mode="aspectFill" style="height: 100%"></image>
-  <image class="ztzyc" src="../../resources/img/more/ztzyc.png" mode="widthFix" bindtap="srcFlagFn"></image>
+  <image class="ztzyc" src="../../resources/img/more/ztzyc.png" mode="widthFix" bindtap="srcFlagFn" wx:if="{{srcFlag}}"></image>
 </view>
 
 

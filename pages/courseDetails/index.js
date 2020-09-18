@@ -42,7 +42,6 @@ Page({
       url: `mycourses/${id}`,
       method: 'GET',
       success: function (res) {
-        console.log('123132', httpConfig.picHead + res.data.datas.video);
         wx.setNavigationBarTitle({
           title: res.data.datas.title//页面标题为路由参数
         })
@@ -68,9 +67,6 @@ Page({
   bindplays(e) {
     let that = this;
     let times = that.data.time;
-    that.setData({
-      bindplays: true
-    })
       let k = 0;
       if(that.data.timer == null) {
         that.data.timer = setInterval(function() {
@@ -78,17 +74,13 @@ Page({
           if(k>10) {
             clearInterval(that.data.timer)
           } else {
-            that.setData({
-              studyTime: times
-            })
             wx.ajax({
               url: `studies/${that.data.id}`,
               method: 'PUT',
               data:{
-                studyTime: parseInt(k * times / 10)
+                studyTime: that.data.studyTime != 0 ? parseInt(k * (times - (times - that.data.studyTime)) / 10) : parseInt(k * times / 10)
               },
               success: function (res) {
-                console.log('123132', res);
               }
             })
           }
@@ -118,7 +110,10 @@ Page({
         studyTime: that.data.studyTime
       },
       success: function (res) {
-        console.log('结束', res);
+        clearInterval(that.data.timer)
+        that.setData({
+          timer: null
+        })
       }
     })
   },
@@ -159,7 +154,6 @@ Page({
   },
 
   bindPlayVideo() {
-    console.log('1')
     this.videoContext.play()
   },
 
@@ -187,14 +181,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+     
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log('123123')
   },
 
   /**

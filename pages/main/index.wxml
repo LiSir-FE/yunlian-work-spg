@@ -99,7 +99,7 @@
             <image class="btm-gengduo" src="../../resources/img/answer/gengduo.png"></image>
             <navigator url="../startAnswering/index" class="btm-top">
                 <image class="btm-top-img" src="../../resources/img/answer/dati.png"></image>
-                <view class="btm-top-text">每日答题</view>
+                <view class="btm-top-text">超级答题</view>
             </navigator>
             <view class="btm-btm btm-btm33" bindtap="mysteryMap" wx-if="{{shenmituFlag}}">
                 神秘图
@@ -143,7 +143,6 @@
         </navigator>
       </view>
 
-  
   </view>
 
 </view>

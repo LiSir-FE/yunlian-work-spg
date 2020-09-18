@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37c91ac7-72ba-47c0-a835-b517382b9588" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filter/index.wxs" beforeDir="false" afterPath="$PROJECT_DIR$/filter/index.wxs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/httpConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/courseDetails/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courseDetails/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/courseDetails/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courseDetails/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/courseDetails/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/courseDetails/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/curriculumList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/curriculumList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/curriculumList/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/curriculumList/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/main/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/main/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main/index.wxss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,12 +14,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+            <state relative-caret-position="510">
+              <caret line="30" column="57" lean-forward="true" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -60,6 +50,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -71,7 +62,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -107,6 +97,7 @@
       <workItem from="1600160462464" duration="154000" />
       <workItem from="1600218539484" duration="1442000" />
       <workItem from="1600224159417" duration="1276000" />
+      <workItem from="1600331037404" duration="645000" />
     </task>
     <task id="LOCAL-00001" summary="修改首页">
       <created>1600218875926</created>
@@ -115,14 +106,21 @@
       <option name="project" value="LOCAL" />
       <updated>1600218875926</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="新增课程&#10;修改首页&#10;修改神秘图">
+      <created>1600331071987</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600331071987</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2958000" />
+    <option name="totallyTimeSpent" value="3603000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-86" width="1936" height="1066" extended-state="7" />
+    <frame x="-1928" y="-86" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
@@ -136,8 +134,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" visible="true" weight="0.34871244" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" visible="true" weight="0.34763947" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32939914" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.51824033" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -189,13 +187,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改首页" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改首页" />
+    <MESSAGE value="新增课程&#10;修改首页&#10;修改神秘图" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增课程&#10;修改首页&#10;修改神秘图" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        <state relative-caret-position="510">
+          <caret line="30" column="57" lean-forward="true" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
         </state>
       </provider>
     </entry>

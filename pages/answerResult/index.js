@@ -24,13 +24,14 @@ Page({
           method: 'GET',
           success: function (res) {
             if(res.data.datas.answerNum == 1 && res.data.datas.point != 100) {
-              this.setData({
+              that.setData({
                 src: 'https://resource.wetuc.com/static/quiz/again.jpg',
                 srcFlag: true
               })
             } else if(res.data.datas.answerNum == 2 && res.data.datas.point != 100) {
-              this.setData({
-                src: 'https://resource.wetuc.com/static/quiz/over.jpg'
+              that.setData({
+                src: 'https://resource.wetuc.com/static/quiz/over.jpg',
+                srcFlag: false
               })
             }
           }
@@ -62,7 +63,7 @@ Page({
 
     onUnload: function () {
       wx.reLaunch({
-        url: '../authorize/login'
+        url: '../main/index'
       })
     },
 
@@ -91,7 +92,7 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-
+     
     },
 
     /**

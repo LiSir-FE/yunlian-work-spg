@@ -54,13 +54,13 @@ Page({
       method: 'GET',
       success: function (res) {
         that.setData({
-          hostLogo: 'https://resource.wetuc.com/' + res.data.datas.hostLogo,
+          hostLogo: 'https://resource.wetuc.com' + res.data.datas.hostLogo,
           hostName: res.data.datas.hostName,
           rank: res.data.datas.rank,
           basePoint: res.data.datas.basePoint,
-          totalPoint: res.data.datas.totalPoint,
-          pic: 'https://resource.wetuc.com' + res.data.datas.pic
+          totalPoint: res.data.datas.totalPoint
         })
+        // pic: 'https://resource.wetuc.com' + res.data.datas.pic
 
         wx.ajax({
           url: 'quizes/pic',
@@ -71,34 +71,37 @@ Page({
                 pic: 'https://resource.wetuc.com/static/quiz/success.jpg'
               })
             }
-          }
-        })
-
-
-
-        wx.getImageInfo({
-          src: that.data.hostLogo,    //请求的网络图片路径
-          success: function (res) {
-            that.setData({
-              hostLogo: res.path
-            })
 
             wx.getImageInfo({
-              src: that.data.pic,    //请求的网络图片路径
+              src: that.data.hostLogo,    //请求的网络图片路径
               success: function (res) {
                 that.setData({
-                  pic: res.path
+                  hostLogo: res.path
                 })
-
-                setTimeout(function () {
-                  that.createCanvasShareImage();
+                wx.getImageInfo({
+                  src: that.data.pic,    //请求的网络图片路径
+                  success: function (res) {
+                    that.setData({
+                      pic: res.path
+                    })
+                    setTimeout(function () {
+                      that.createCanvasShareImage();
+                    })
+                  },error: function(err) {
+                    console.log('asdasd', err)
+                  }
                 })
+              },error: function(err) {
+                console.log('asdasd', err)
               }
             })
-          },complete: function(err) {
-            console.log('asdasd', err)
           }
         })
+
+
+         
+
+        
       }
     });
    
@@ -108,7 +111,6 @@ Page({
   createCanvasShareImage:function() {
     let that = this;
     let ctx = wx.createCanvasContext('myCanvas');
-
     // 获取canvas的宽度：
     // 750的设计稿基于iphone6的尺寸（屏幕宽度： 375px）在小程序中的比例是： 1px = 2rpx ==> 375px = 750rpx ==> 屏幕宽度(px) = 750rpx
     // 所以 1rpx = 屏幕宽度 / 750
@@ -138,17 +140,24 @@ Page({
     ctx.setFontSize(10);
     ctx.fillStyle = "#666";
       // 绘制居中文本：这个地方的 (x, y)的坐标是在文本的居中位置
-    if (that.data.rank > 0) {
-      ctx.fillText('恭喜您成为第 '+that.data.rank+' 位截图成功的人', canvasWidthPx / 4, that.data.windowHeight / 1.25 - 15);
+
+
+      ctx.fillText('恭喜您!', canvasWidthPx / 4, that.data.windowHeight / 1.25 - 15);
       that.setData({
         anFlag: true,
       });
-    } else {
-      ctx.fillText('解锁中', canvasWidthPx / 4, that.data.windowHeight / 1.25 - 15);
-      that.setData({
-        anFlag: false,
-      });
-    }
+
+    // if (that.data.rank > 0) {
+    //   ctx.fillText('恭喜您成为第 '+that.data.rank+' 位截图成功的人', canvasWidthPx / 4, that.data.windowHeight / 1.25 - 15);
+    //   that.setData({
+    //     anFlag: true,
+    //   });
+    // } else {
+    //   ctx.fillText('解锁中', canvasWidthPx / 4, that.data.windowHeight / 1.25 - 15);
+    //   that.setData({
+    //     anFlag: false,
+    //   });
+    // }
 
   
     
@@ -164,11 +173,18 @@ Page({
 
 
     // 设置 神秘图 的背景并填充canvas
-    if (that.data.totalPoint <= that.data.basePoint) {
-      ctx.fillStyle = '#4188a2';
+    // if (that.data.totalPoint <= that.data.basePoint) {
+      // ctx.fillStyle = '#4188a2';
+      // // ctx.setStrokeStyle('rgba(244, 248, 246, 0.8)');
+      // ctx.fillRect(0, ((that.data.windowHeight / 1.25 - 60) / that.data.basePoint) * that.data.totalPoint, canvasWidthPx / 1.36, (that.data.windowHeight / 1.25 - 60) - ((that.data.windowHeight / 1.25 - 60) / that.data.basePoint) * that.data.totalPoint);
+    // }
+
+    that.setData({
+      totalPoint: 1
+    })
+    ctx.fillStyle = '#4188a2';
       // ctx.setStrokeStyle('rgba(244, 248, 246, 0.8)');
-      ctx.fillRect(0, ((that.data.windowHeight / 1.25 - 60) / that.data.basePoint) * that.data.totalPoint, canvasWidthPx / 1.36, (that.data.windowHeight / 1.25 - 60) - ((that.data.windowHeight / 1.25 - 60) / that.data.basePoint) * that.data.totalPoint);
-    }
+      ctx.fillRect(0, ((that.data.windowHeight / 1.25 - 60) / that.data.basePoint) * that.data.totalPoint, canvasWidthPx / 1.36, (that.data.windowHeight / 1.25 - 60) - ((that.data.windowHeight / 1.25 - 60)) * that.data.totalPoint);
   
 
     ctx.draw();
