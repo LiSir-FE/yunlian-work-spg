@@ -1,4 +1,4 @@
-const ENV = 'dev'
+const ENV = 'pro'
 
 const baseUrl = {
     dev: 'https://apia.tucmedia.com/',

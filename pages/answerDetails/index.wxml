@@ -6,7 +6,7 @@
 
       <view class="page-top">{{filter.formatDate(time)}}成绩单:答对
           <span class="redY">{{rightNum}}</span>题,
-          答错<span class="redY">{{answeringList.length - rightNum}}</span>题,
+          答错<span class="redY">{{answeringList.length != 0 ? 20 - rightNum : 0}}</span>题,
           得<span class="redY">{{point}}</span>分</view>
   
         <scroll-view scroll-y="true" style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
