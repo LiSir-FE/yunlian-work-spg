@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/main/index",
     "pages/userName/index",
     "pages/authorize/index",
     "pages/userInfo/index",
     "pages/company/index",
     "pages/error/index",
-    "pages/main/index",
     "pages/work/index",
     "pages/newUser/index",
     "pages/me/index",

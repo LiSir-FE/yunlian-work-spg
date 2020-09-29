@@ -35,19 +35,19 @@ Page({
                       nickName: res.userInfo.nickName
                   })
               },
-              fail: function (err) {
-                  wx.removeStorage({
-                      key: 'token',
-                      success: function (res) {
-                          setTimeout(() => {
-                              wx.reLaunch({
-                                  url: '../authorize/index'
-                              })
-                          }, 800);
-                      }
-                  })
-                  return;
-              },
+              // fail: function (err) {
+              //     wx.removeStorage({
+              //         key: 'token',
+              //         success: function (res) {
+              //             setTimeout(() => {
+              //                 wx.reLaunch({
+              //                     url: '../authorize/index'
+              //                 })
+              //             }, 800);
+              //         }
+              //     })
+              //     return;
+              // },
               complete: function () {
                   wx.hideLoading()
               }
