@@ -201,6 +201,18 @@ Page({
      */
     onShow: function () {
       var that = this;
+      wx.getUserInfo({
+        success: function (res) {
+            that.setData({
+                avatarUrl: res.userInfo.avatarUrl,
+                nickName: res.userInfo.nickName
+            })
+        },
+        complete: function () {
+            wx.hideLoading()
+        }
+      })
+
       // 获取系统信息
       wx.getSystemInfo({
         success: function (res) {
