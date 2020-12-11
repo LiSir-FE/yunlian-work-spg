@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="37c91ac7-72ba-47c0-a835-b517382b9588" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="37c91ac7-72ba-47c0-a835-b517382b9588" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +63,7 @@
       <workItem from="1600418674348" duration="25000" />
       <workItem from="1600419924159" duration="18000" />
       <workItem from="1600419987359" duration="47000" />
-      <workItem from="1607654655729" duration="741000" />
+      <workItem from="1607654655729" duration="1725000" />
     </task>
     <task id="LOCAL-00001" summary="修改首页">
       <created>1600218875926</created>
@@ -119,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607654916475</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="测试课程">
+      <created>1607655478621</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607655478621</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,11 +169,6 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="1" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -190,18 +194,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="测试课程" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1362" y="-4" key="CommitChangelistDialog2" timestamp="1607654916066">
+    <state x="-1362" y="-4" key="CommitChangelistDialog2" timestamp="1607655478214">
       <screen x="-1920" y="-95" width="1920" height="1050" />
     </state>
-    <state x="-1362" y="-4" key="CommitChangelistDialog2/-1920.-95.1920.1050/0.0.1440.870@-1920.-95.1920.1050" timestamp="1607654916066" />
+    <state x="-1362" y="-4" key="CommitChangelistDialog2/-1920.-95.1920.1050/0.0.1440.870@-1920.-95.1920.1050" timestamp="1607655478214" />
+    <state x="-1544" y="63" key="DiffContextDialog" timestamp="1607655475150">
+      <screen x="-1920" y="-95" width="1920" height="1050" />
+    </state>
+    <state x="-1544" y="63" key="DiffContextDialog/-1920.-95.1920.1050/0.0.1440.870@-1920.-95.1920.1050" timestamp="1607655475150" />
     <state x="-1459" y="74" key="SettingsEditor" timestamp="1607655057683">
       <screen x="-1920" y="-95" width="1920" height="1050" />
     </state>
     <state x="-1459" y="74" key="SettingsEditor/-1920.-95.1920.1050/0.0.1440.870@-1920.-95.1920.1050" timestamp="1607655057683" />
-    <state x="-1368" y="162" key="Vcs.Push.Dialog.v2" timestamp="1607654922265">
+    <state x="-1368" y="162" key="Vcs.Push.Dialog.v2" timestamp="1607655487037">
       <screen x="-1920" y="-95" width="1920" height="1050" />
     </state>
-    <state x="-1368" y="162" key="Vcs.Push.Dialog.v2/-1920.-95.1920.1050/0.0.1440.870@-1920.-95.1920.1050" timestamp="1607654922265" />
+    <state x="-1368" y="162" key="Vcs.Push.Dialog.v2/-1920.-95.1920.1050/0.0.1440.870@-1920.-95.1920.1050" timestamp="1607655487037" />
     <state x="-1157" y="342" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607654895980">
       <screen x="-1920" y="-95" width="1920" height="1050" />
     </state>
@@ -214,5 +222,9 @@
       <screen x="-1920" y="-95" width="1920" height="1050" />
     </state>
     <state x="-1151" y="268" key="git4idea.ui.GitTagDialog/-1920.-95.1920.1050/0.0.1440.870@-1920.-95.1920.1050" timestamp="1607655125873" />
+    <state x="-1130" y="220" key="svn.repositoryBrowser" timestamp="1607655824574">
+      <screen x="-1920" y="-95" width="1920" height="1050" />
+    </state>
+    <state x="-1130" y="220" key="svn.repositoryBrowser/-1920.-95.1920.1050/0.0.1440.870@-1920.-95.1920.1050" timestamp="1607655824574" />
   </component>
 </project>

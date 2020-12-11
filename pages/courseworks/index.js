@@ -31,8 +31,8 @@ Page({
         wx.showToast({ title: '作业完成', icon: 'none' });
         setTimeout(() => {
           wx.redirectTo({
-                url: '../curriculumList/index'
-            })
+              url: '../curriculumList/index'
+          })
         }, 800);
       }
     })
@@ -41,11 +41,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('options', options)
     this.setData({
       title2: decodeURIComponent(options.title2),
       id: options.id,
       courseId: options.courseId,
       title1: decodeURIComponent(options.title)
+    })
+    this.getInfo();
+  },
+
+  getInfo() {
+    let that = this;
+    wx.ajax({
+      url: `courseworks/${that.data.id}/myanswer `,
+      method: 'GET',
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          content: res.data.datas ? res.data.datas.cwaContent : ''
+        })
+      }
     })
   },
 
