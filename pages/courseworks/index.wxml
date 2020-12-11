@@ -1,0 +1,16 @@
+<!--pages/courseworks/index.wxml-->
+<!-- <text>pages/courseworks/index.wxml</text> -->
+<view class="container">
+    <view class="title">课程名称: {{title1}}</view>
+
+
+    <view class="warp">
+        <text class="wenten">{{title2}}</text>
+
+        <textarea placeholder="请写作业" class="textareas" placeholder-class="texts" bindinput="changeContext" value="{{content}}"></textarea>
+
+
+        <button class='trunkLine-done-button' bindtap='submission'>提交</button>
+
+    </view>
+</view>

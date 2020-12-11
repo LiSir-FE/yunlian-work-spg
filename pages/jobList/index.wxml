@@ -1,0 +1,77 @@
+<!--pages/jobList/index.wxml-->
+<!-- <text>pages/jobList/index.wxml</text> -->
+<wxs src="../../filter/index.wxs" module="filter" />
+<view class="contant">
+  <view class="title">{{title}}</view>
+  <view class="qbzy">全部作业</view>
+
+    <view class="warp">
+      <view class="list" wx:for="{{answers}}" wx:key='key' wx:for-index='key'>
+        <view class="header">
+          <view class="name">{{item.staffName}}</view>
+          <view wx:if="{{teacher}}">
+            <view bindtap="likeTap" data-id="{{item.id}}" data-index="{{key}}" class="work-input cuIcon-like" wx:if="{{item.star == 0}}"></view>
+            <view bindtap="likeTap" data-id="{{item.id}}" data-index="{{key}}" class="cuIcon-likefill" wx:if="{{item.star == 1}}"></view>
+          </view>
+          <view class="time">{{filter.formatDate(item.cwaTime)}}</view>
+        </view>
+        <view style="padding-bottom:10rpx;border-bottom: 1rpx solid #F8F8F8;display:inline-block;width:100%">
+          <view class="content {{item.ellipsis?'ellipsis':'unellipsis'}}">{{item.cwaContent}}</view>
+          <view bindtap='deleteFn' data-index='{{key}}' data-id="{{item.id}}" style="float:right;color:#f24745" wx:if="{{item.delete}}">删除</view>
+          <view bindtap='ellipsis' data-index='{{key}}' style="float:right;padding:0 10rpx">
+            <view>
+              <view>{{item.ellipsis?'展开':'收起'}}</view>
+            </view>
+          </view>
+          <view bindtap="bindReply" data-name="{{item.staffName}}" data-answerId="{{item.id}}" wx:if="{{teacher}}" style="float:right">回复</view>
+        </view>
+       
+
+        <!--讲师 -->
+      <view class="list list2" wx:if='{{item.teacherId}}'>
+        <view class="header">
+          <view class="name">{{item.teacherName}}</view>
+          <view class="time">{{filter.formatDate(item.cwatTime)}}</view>
+        </view>
+        <view class="content {{item.ellipsis?'ellipsis':'unellipsis'}}">{{item.cwatContent}}</view>
+        <view bindtap='ellipsis' data-index='{{key}}' style="float: right;">
+          <view>
+            <view>{{item.ellipsis?'展开':'收起'}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+      </view>
+
+
+
+      
+
+    <view class="container">
+      <view class="release">
+        <textarea 
+          class="text"
+          placeholder-class="releaseInput"
+          value="{{content}}"
+          fixed="true" 
+          maxlength="120" 
+          show-confirm-bar="{{false}}" 
+          cursor-spacing="15" 
+          style="height: 30px"
+          auto-height="true" 
+          focus="{{focus}}"
+          placeholder="回复 {{name}}"
+          value="{{content}}"
+          bindinput="contentInput"></textarea>
+        <view class="submit" bindtap="comment" data-answerId="{{}}">发送</view>
+      </view>
+    </view>
+
+  
+</view>
+
+
+
