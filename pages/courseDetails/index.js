@@ -120,14 +120,15 @@ Page({
 
 
   workAfterfn(e) {
+    console.log('ew', e.currentTarget.dataset.title2)
     wx.navigateTo({
-      url: '../jobList/index?id=' + e.currentTarget.dataset.id + '&title2=' + e.currentTarget.dataset.title2,
+      url: '../jobList/index?id=' + e.currentTarget.dataset.id + '&title2=' + encodeURIComponent(e.currentTarget.dataset.title2),
     })
   },
 
   workAfter20fn(e) {
     wx.navigateTo({
-      url: '../courseworks/index?id=' + e.currentTarget.dataset.id + '&status=' + e.currentTarget.dataset.status + '&title=' + e.currentTarget.dataset.title1 + '&title2=' + e.currentTarget.dataset.title2,
+      url: '../courseworks/index?id=' + e.currentTarget.dataset.id + '&status=' + e.currentTarget.dataset.status + '&courseId=' + e.currentTarget.dataset.courseid + '&title=' + encodeURIComponent(e.currentTarget.dataset.title1) + '&title2=' + encodeURIComponent(e.currentTarget.dataset.title2),
     })
   },
 

@@ -142,7 +142,7 @@ page, .containers{
 }
 
 .cuIcon-favor, .cuIcon-favorfill{
-  color: yellow;
+  color: #f88c11;
   display: inline-block;
   float: right;
 }

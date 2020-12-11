@@ -6,30 +6,41 @@
   "setting": {
     "urlCheck": true,
     "es6": true,
+    "enhance": false,
     "postcss": true,
+    "preloadBackgroundData": false,
     "minified": true,
     "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
     "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
     "uglifyFileName": true,
     "checkInvalidKey": true,
     "checkSiteMap": false,
     "uploadWithSourceMap": true,
-    "useMultiFrameRuntime": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
     "useApiHook": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
+    "enableEngineNative": false,
+    "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
-    "packNpmRelationList": []
+    "packNpmRelationList": [],
+    "minifyWXSS": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.9.4",
-  "appid": "wxe7df963f9573ef51",
+  "appid": "touristappid",
   "projectname": "yunlian-work-spg",
   "debugOptions": {
     "hidedInDevtools": []
@@ -39,11 +50,9 @@
   "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
-      "current": -1,
       "list": []
     },
     "conversation": {
-      "current": -1,
       "list": []
     },
     "game": {
@@ -51,7 +60,6 @@
       "list": []
     },
     "miniprogram": {
-      "current": -1,
       "list": []
     }
   }

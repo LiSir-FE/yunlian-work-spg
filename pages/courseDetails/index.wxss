@@ -122,6 +122,7 @@ page, .containers{
   font-size: 26rpx;
   box-sizing: border-box;
   color: #999;
+  white-space:pre-wrap 
 }
 
 .color-backbg{

@@ -23,9 +23,9 @@
       </view>
     </view>
 
-
+<!--  bindtap="courseDetailsFn" -->
           <view class="contant">
-              <view  bindtap="courseDetailsFn" style="width: 90%;margin: 0 auto;background: #fff">
+              <view style="width: 90%;margin: 0 auto;background: #fff">
                       <view class="task-view">
                           <text class="task-test">{{title}}</text>
                       </view>
@@ -56,7 +56,7 @@
 
                               <view class="task-view22" wx:for="{{workAfter}}" wx:key="status">
                                   <view class="cu-tag bg-backbg fontSize workAfter" bindtap="workAfterfn" data-title1="{{title}}" data-title2="{{item.cwTitle}}" data-id="{{item.id}}">{{index + 1 + ','}} {{item.cwTitle}}</view>
-                                  <view wx:if="{{!teacher}}" class="cu-tag blue cu-tagBrue workAfter20" bindtap="workAfter20fn" data-title1="{{title}}" data-title2="{{item.cwTitle}}" data-id="{{item.id}}" data-status="{{item.status}}">{{filter.courseWorksStatus(item.status)}}</view>
+                                  <view wx:if="{{!teacher}}" class="cu-tag blue cu-tagBrue workAfter20" bindtap="workAfter20fn" data-courseId="{{item.courseId}}" data-title1="{{title}}" data-title2="{{item.cwTitle}}" data-id="{{item.id}}" data-status="{{item.status}}">{{filter.courseWorksStatus(item.status)}}</view>
                               </view>
                           
                            </view>    

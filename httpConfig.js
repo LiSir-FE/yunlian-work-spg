@@ -1,4 +1,4 @@
-const ENV = 'pro'
+const ENV = 'dev'
 
 const baseUrl = {
     dev: 'https://apia.tucmedia.com/',
@@ -6,7 +6,8 @@ const baseUrl = {
 }
 
 const picHead = {
-    dev: 'https://resource.wetuc.com/'
+    dev: 'https://resource.wetuc.com/',
+    pro: 'https://resource.wetuc.com/',
 }
 
 
